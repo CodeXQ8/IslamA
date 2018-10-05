@@ -42,6 +42,9 @@
 		BEAAA21B2166CF300022CD81 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E72166CF300022CD81 /* OpenSans-LightItalic.ttf */; };
 		BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */; };
 		BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */; };
+		BEC21A0C2167E5A100F9334F /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0A2167E5A000F9334F /* Logo.png */; };
+		BEC21A0D2167E5A100F9334F /* Logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0B2167E5A100F9334F /* Logo3.png */; };
+		BEC21A0F21680E3600F9334F /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC21A0E21680E3600F9334F /* ContainerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		BEAAA2212166DD280022CD81 /* Islam-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Islam-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEAAA2222166DD290022CD81 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		BEC21A0A2167E5A000F9334F /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		BEC21A0B2167E5A100F9334F /* Logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo3.png; sourceTree = "<group>"; };
+		BEC21A0E21680E3600F9334F /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		BEAAA18D21669F840022CD81 /* Islam */ = {
 			isa = PBXGroup;
 			children = (
+				BEC21A092167E58400F9334F /* Images */,
 				BEAAA21E2166D80D0022CD81 /* Deignable */,
 				BEAAA1B52166CF100022CD81 /* Font */,
 				BEAAA1A92166CC040022CD81 /* Cells */,
@@ -143,6 +150,7 @@
 				BEAAA1B32166CCEA0022CD81 /* PostVC.swift */,
 				BE01C5912166F8800082C43A /* FQA'sVC.swift */,
 				BE113D7E21673AEB0011FE48 /* MenuTVC.swift */,
+				BEC21A0E21680E3600F9334F /* ContainerVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -208,6 +216,15 @@
 				BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */,
 			);
 			path = Deignable;
+			sourceTree = "<group>";
+		};
+		BEC21A092167E58400F9334F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BEC21A0A2167E5A000F9334F /* Logo.png */,
+				BEC21A0B2167E5A100F9334F /* Logo3.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		D427DC18CFA474056101433A /* Pods */ = {
@@ -296,6 +313,7 @@
 				BEAAA1F02166CF300022CD81 /* OpenSans-BoldItalic.ttf in Resources */,
 				BEAAA2172166CF300022CD81 /* Andada-Regular.otf in Resources */,
 				BEAAA20F2166CF300022CD81 /* Andada-BoldItalic.otf in Resources */,
+				BEC21A0D2167E5A100F9334F /* Logo3.png in Resources */,
 				BEAAA1FA2166CF300022CD81 /* AndadaSC-Regular.otf in Resources */,
 				BEAAA2142166CF300022CD81 /* AndadaSC-BoldItalic.otf in Resources */,
 				BEAAA2072166CF300022CD81 /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -308,6 +326,7 @@
 				BEAAA2062166CF300022CD81 /* AndadaSC-Italic.otf in Resources */,
 				BEAAA2082166CF300022CD81 /* Andada-Bold.otf in Resources */,
 				BEAAA19421669F840022CD81 /* Main.storyboard in Resources */,
+				BEC21A0C2167E5A100F9334F /* Logo.png in Resources */,
 				BEAAA2042166CF300022CD81 /* Adamina-Regular.ttf in Resources */,
 				BEAAA1FE2166CF300022CD81 /* OpenSans-Light.ttf in Resources */,
 			);
@@ -368,6 +387,7 @@
 				BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */,
 				BEAAA1A72166CB310022CD81 /* Post.swift in Sources */,
 				BEAAA1AB2166CC140022CD81 /* cellPost.swift in Sources */,
+				BEC21A0F21680E3600F9334F /* ContainerVC.swift in Sources */,
 				BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */,
 				BEAAA1B42166CCEA0022CD81 /* PostVC.swift in Sources */,
 				BEAAA1B22166CCC40022CD81 /* SearchVC.swift in Sources */,

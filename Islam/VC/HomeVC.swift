@@ -10,12 +10,14 @@ import UIKit
 import SideMenu
 
 
-var postType = Int()
+var postType = 0
 var isReload = true
 
 class HomeVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var childVC: UIView!
     
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
@@ -28,6 +30,7 @@ class HomeVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
   
+    
         fetchAllPosts()
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,8 +40,16 @@ class HomeVC: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isReload == false  {
+        if postType == 0 {
+            tableView.isHidden = true
+              childVC.isHidden = false
+        } else {
+            tableView.isHidden = false
+            childVC.isHidden = true
+        }
+        
         navigationSetUp()
+        if isReload == false  {
         tableView.reloadData()
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
         isReload = true
@@ -51,6 +62,8 @@ class HomeVC: UIViewController{
 //        navigationController?.navigationBar.shadowImage = UIImage()
         switch postType
         {
+        case articles :
+           navigationItem.title = "Articles"
         case misconceptions :
            navigationItem.title = "Misconceptions"
             
@@ -58,7 +71,7 @@ class HomeVC: UIViewController{
            navigationItem.title = "FQA's"
             
         default:
-            navigationItem.title = "Articles"
+            navigationItem.title = "Home"
         }
     }
 
