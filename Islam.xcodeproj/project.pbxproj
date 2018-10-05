@@ -7,21 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F52D4CBA64533D305C64580 /* Pods_Islam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */; };
+		BE01C5922166F8800082C43A /* FQA'sVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01C5912166F8800082C43A /* FQA'sVC.swift */; };
+		BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE113D7E21673AEB0011FE48 /* MenuTVC.swift */; };
 		BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA18E21669F840022CD81 /* AppDelegate.swift */; };
-		BEAAA19121669F840022CD81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA19021669F840022CD81 /* ViewController.swift */; };
 		BEAAA19421669F840022CD81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA19221669F840022CD81 /* Main.storyboard */; };
 		BEAAA19621669F860022CD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA19521669F860022CD81 /* Assets.xcassets */; };
 		BEAAA19921669F860022CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA19721669F860022CD81 /* LaunchScreen.storyboard */; };
+		BEAAA1A32166CA680022CD81 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1A22166CA680022CD81 /* HomeVC.swift */; };
+		BEAAA1A72166CB310022CD81 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1A52166CB300022CD81 /* Post.swift */; };
+		BEAAA1A82166CB310022CD81 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1A62166CB300022CD81 /* PostRequest.swift */; };
+		BEAAA1AB2166CC140022CD81 /* cellPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1AA2166CC140022CD81 /* cellPost.swift */; };
+		BEAAA1AF2166CC8B0022CD81 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1AD2166CC8B0022CD81 /* String+Convenience.swift */; };
+		BEAAA1B02166CC8B0022CD81 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1AE2166CC8B0022CD81 /* style.css */; };
+		BEAAA1B22166CCC40022CD81 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1B12166CCC40022CD81 /* SearchVC.swift */; };
+		BEAAA1B42166CCEA0022CD81 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA1B32166CCEA0022CD81 /* PostVC.swift */; };
+		BEAAA1EE2166CF300022CD81 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1BA2166CF240022CD81 /* OpenSans-ExtraBoldItalic.ttf */; };
+		BEAAA1F02166CF300022CD81 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1BC2166CF250022CD81 /* OpenSans-BoldItalic.ttf */; };
+		BEAAA1FA2166CF300022CD81 /* AndadaSC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1C62166CF260022CD81 /* AndadaSC-Regular.otf */; };
+		BEAAA1FE2166CF300022CD81 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1CA2166CF270022CD81 /* OpenSans-Light.ttf */; };
+		BEAAA2012166CF300022CD81 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1CD2166CF280022CD81 /* OpenSans-Italic.ttf */; };
+		BEAAA2042166CF300022CD81 /* Adamina-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D02166CF290022CD81 /* Adamina-Regular.ttf */; };
+		BEAAA2052166CF300022CD81 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D12166CF290022CD81 /* OpenSans-Regular.ttf */; };
+		BEAAA2062166CF300022CD81 /* AndadaSC-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D22166CF290022CD81 /* AndadaSC-Italic.otf */; };
+		BEAAA2072166CF300022CD81 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D32166CF290022CD81 /* OpenSans-SemiBoldItalic.ttf */; };
+		BEAAA2082166CF300022CD81 /* Andada-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D42166CF2A0022CD81 /* Andada-Bold.otf */; };
+		BEAAA20A2166CF300022CD81 /* Andada-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D62166CF2A0022CD81 /* Andada-Italic.otf */; };
+		BEAAA20B2166CF300022CD81 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1D72166CF2A0022CD81 /* OpenSans-SemiBold.ttf */; };
+		BEAAA20F2166CF300022CD81 /* Andada-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1DB2166CF2C0022CD81 /* Andada-BoldItalic.otf */; };
+		BEAAA2142166CF300022CD81 /* AndadaSC-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E02166CF2D0022CD81 /* AndadaSC-BoldItalic.otf */; };
+		BEAAA2152166CF300022CD81 /* AndadaSC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E12166CF2E0022CD81 /* AndadaSC-Bold.otf */; };
+		BEAAA2172166CF300022CD81 /* Andada-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E32166CF2E0022CD81 /* Andada-Regular.otf */; };
+		BEAAA2182166CF300022CD81 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E42166CF2F0022CD81 /* OpenSans-ExtraBold.ttf */; };
+		BEAAA21B2166CF300022CD81 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA1E72166CF300022CD81 /* OpenSans-LightItalic.ttf */; };
+		BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */; };
+		BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Islam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.release.xcconfig"; sourceTree = "<group>"; };
+		95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.debug.xcconfig"; sourceTree = "<group>"; };
+		BE01C5912166F8800082C43A /* FQA'sVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FQA'sVC.swift"; sourceTree = "<group>"; };
+		BE113D7E21673AEB0011FE48 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		BEAAA18B21669F840022CD81 /* Islam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Islam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAA18E21669F840022CD81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEAAA19021669F840022CD81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEAAA19321669F840022CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEAAA19521669F860022CD81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEAAA19821669F860022CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEAAA19A21669F860022CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAAA1A22166CA680022CD81 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BEAAA1A52166CB300022CD81 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BEAAA1A62166CB300022CD81 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		BEAAA1AA2166CC140022CD81 /* cellPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellPost.swift; sourceTree = "<group>"; };
+		BEAAA1AD2166CC8B0022CD81 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
+		BEAAA1AE2166CC8B0022CD81 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		BEAAA1B12166CCC40022CD81 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		BEAAA1B32166CCEA0022CD81 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		BEAAA1BA2166CF240022CD81 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		BEAAA1BC2166CF250022CD81 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BEAAA1C62166CF260022CD81 /* AndadaSC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AndadaSC-Regular.otf"; sourceTree = "<group>"; };
+		BEAAA1CA2166CF270022CD81 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		BEAAA1CD2166CF280022CD81 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		BEAAA1D02166CF290022CD81 /* Adamina-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-Regular.ttf"; sourceTree = "<group>"; };
+		BEAAA1D12166CF290022CD81 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		BEAAA1D22166CF290022CD81 /* AndadaSC-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AndadaSC-Italic.otf"; sourceTree = "<group>"; };
+		BEAAA1D32166CF290022CD81 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		BEAAA1D42166CF2A0022CD81 /* Andada-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andada-Bold.otf"; sourceTree = "<group>"; };
+		BEAAA1D62166CF2A0022CD81 /* Andada-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andada-Italic.otf"; sourceTree = "<group>"; };
+		BEAAA1D72166CF2A0022CD81 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		BEAAA1DB2166CF2C0022CD81 /* Andada-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andada-BoldItalic.otf"; sourceTree = "<group>"; };
+		BEAAA1E02166CF2D0022CD81 /* AndadaSC-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AndadaSC-BoldItalic.otf"; sourceTree = "<group>"; };
+		BEAAA1E12166CF2E0022CD81 /* AndadaSC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AndadaSC-Bold.otf"; sourceTree = "<group>"; };
+		BEAAA1E32166CF2E0022CD81 /* Andada-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andada-Regular.otf"; sourceTree = "<group>"; };
+		BEAAA1E42166CF2F0022CD81 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BEAAA1E72166CF300022CD81 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeisgnableButton.swift; sourceTree = "<group>"; };
+		BEAAA2212166DD280022CD81 /* Islam-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Islam-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEAAA2222166DD290022CD81 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F52D4CBA64533D305C64580 /* Pods_Islam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +105,8 @@
 			children = (
 				BEAAA18D21669F840022CD81 /* Islam */,
 				BEAAA18C21669F840022CD81 /* Products */,
+				D427DC18CFA474056101433A /* Pods */,
+				F65762D15530CE1D36E45671 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +121,110 @@
 		BEAAA18D21669F840022CD81 /* Islam */ = {
 			isa = PBXGroup;
 			children = (
-				BEAAA18E21669F840022CD81 /* AppDelegate.swift */,
-				BEAAA19021669F840022CD81 /* ViewController.swift */,
+				BEAAA21E2166D80D0022CD81 /* Deignable */,
+				BEAAA1B52166CF100022CD81 /* Font */,
+				BEAAA1A92166CC040022CD81 /* Cells */,
+				BEAAA1A42166CB260022CD81 /* Wordpress */,
+				BEAAA1A12166CA3C0022CD81 /* VC */,
 				BEAAA19221669F840022CD81 /* Main.storyboard */,
 				BEAAA19521669F860022CD81 /* Assets.xcassets */,
 				BEAAA19721669F860022CD81 /* LaunchScreen.storyboard */,
 				BEAAA19A21669F860022CD81 /* Info.plist */,
+				BEAAA1AC2166CC600022CD81 /* Supporting Files */,
 			);
 			path = Islam;
+			sourceTree = "<group>";
+		};
+		BEAAA1A12166CA3C0022CD81 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA1A22166CA680022CD81 /* HomeVC.swift */,
+				BEAAA1B12166CCC40022CD81 /* SearchVC.swift */,
+				BEAAA1B32166CCEA0022CD81 /* PostVC.swift */,
+				BE01C5912166F8800082C43A /* FQA'sVC.swift */,
+				BE113D7E21673AEB0011FE48 /* MenuTVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		BEAAA1A42166CB260022CD81 /* Wordpress */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA1A52166CB300022CD81 /* Post.swift */,
+				BEAAA1A62166CB300022CD81 /* PostRequest.swift */,
+			);
+			path = Wordpress;
+			sourceTree = "<group>";
+		};
+		BEAAA1A92166CC040022CD81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA1AA2166CC140022CD81 /* cellPost.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BEAAA1AC2166CC600022CD81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA18E21669F840022CD81 /* AppDelegate.swift */,
+				BEAAA1AD2166CC8B0022CD81 /* String+Convenience.swift */,
+				BEAAA1AE2166CC8B0022CD81 /* style.css */,
+				BEAAA2212166DD280022CD81 /* Islam-Bridging-Header.h */,
+				BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */,
+				BEAAA2222166DD290022CD81 /* SWRevealViewController.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEAAA1B52166CF100022CD81 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA1D02166CF290022CD81 /* Adamina-Regular.ttf */,
+				BEAAA1D42166CF2A0022CD81 /* Andada-Bold.otf */,
+				BEAAA1DB2166CF2C0022CD81 /* Andada-BoldItalic.otf */,
+				BEAAA1D62166CF2A0022CD81 /* Andada-Italic.otf */,
+				BEAAA1E32166CF2E0022CD81 /* Andada-Regular.otf */,
+				BEAAA1E12166CF2E0022CD81 /* AndadaSC-Bold.otf */,
+				BEAAA1E02166CF2D0022CD81 /* AndadaSC-BoldItalic.otf */,
+				BEAAA1D22166CF290022CD81 /* AndadaSC-Italic.otf */,
+				BEAAA1C62166CF260022CD81 /* AndadaSC-Regular.otf */,
+				BEAAA1BC2166CF250022CD81 /* OpenSans-BoldItalic.ttf */,
+				BEAAA1E42166CF2F0022CD81 /* OpenSans-ExtraBold.ttf */,
+				BEAAA1BA2166CF240022CD81 /* OpenSans-ExtraBoldItalic.ttf */,
+				BEAAA1CD2166CF280022CD81 /* OpenSans-Italic.ttf */,
+				BEAAA1CA2166CF270022CD81 /* OpenSans-Light.ttf */,
+				BEAAA1E72166CF300022CD81 /* OpenSans-LightItalic.ttf */,
+				BEAAA1D12166CF290022CD81 /* OpenSans-Regular.ttf */,
+				BEAAA1D72166CF2A0022CD81 /* OpenSans-SemiBold.ttf */,
+				BEAAA1D32166CF290022CD81 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BEAAA21E2166D80D0022CD81 /* Deignable */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */,
+			);
+			path = Deignable;
+			sourceTree = "<group>";
+		};
+		D427DC18CFA474056101433A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */,
+				6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F65762D15530CE1D36E45671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEAAA19D21669F860022CD81 /* Build configuration list for PBXNativeTarget "Islam" */;
 			buildPhases = (
+				8792028D48FE05AF70579EC9 /* [CP] Check Pods Manifest.lock */,
 				BEAAA18721669F840022CD81 /* Sources */,
 				BEAAA18821669F840022CD81 /* Frameworks */,
 				BEAAA18921669F840022CD81 /* Resources */,
+				85E9AFBE0F8ECD4AD7312DDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +261,7 @@
 				TargetAttributes = {
 					BEAAA18A21669F840022CD81 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -123,20 +289,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAA19921669F860022CD81 /* LaunchScreen.storyboard in Resources */,
+				BEAAA1EE2166CF300022CD81 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				BEAAA1B02166CC8B0022CD81 /* style.css in Resources */,
+				BEAAA2152166CF300022CD81 /* AndadaSC-Bold.otf in Resources */,
+				BEAAA20A2166CF300022CD81 /* Andada-Italic.otf in Resources */,
+				BEAAA1F02166CF300022CD81 /* OpenSans-BoldItalic.ttf in Resources */,
+				BEAAA2172166CF300022CD81 /* Andada-Regular.otf in Resources */,
+				BEAAA20F2166CF300022CD81 /* Andada-BoldItalic.otf in Resources */,
+				BEAAA1FA2166CF300022CD81 /* AndadaSC-Regular.otf in Resources */,
+				BEAAA2142166CF300022CD81 /* AndadaSC-BoldItalic.otf in Resources */,
+				BEAAA2072166CF300022CD81 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				BEAAA20B2166CF300022CD81 /* OpenSans-SemiBold.ttf in Resources */,
+				BEAAA2012166CF300022CD81 /* OpenSans-Italic.ttf in Resources */,
+				BEAAA21B2166CF300022CD81 /* OpenSans-LightItalic.ttf in Resources */,
+				BEAAA2182166CF300022CD81 /* OpenSans-ExtraBold.ttf in Resources */,
 				BEAAA19621669F860022CD81 /* Assets.xcassets in Resources */,
+				BEAAA2052166CF300022CD81 /* OpenSans-Regular.ttf in Resources */,
+				BEAAA2062166CF300022CD81 /* AndadaSC-Italic.otf in Resources */,
+				BEAAA2082166CF300022CD81 /* Andada-Bold.otf in Resources */,
 				BEAAA19421669F840022CD81 /* Main.storyboard in Resources */,
+				BEAAA2042166CF300022CD81 /* Adamina-Regular.ttf in Resources */,
+				BEAAA1FE2166CF300022CD81 /* OpenSans-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85E9AFBE0F8ECD4AD7312DDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Islam/Pods-Islam-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Islam/Pods-Islam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8792028D48FE05AF70579EC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Islam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BEAAA18721669F840022CD81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEAAA19121669F840022CD81 /* ViewController.swift in Sources */,
+				BEAAA1A32166CA680022CD81 /* HomeVC.swift in Sources */,
+				BEAAA1A82166CB310022CD81 /* PostRequest.swift in Sources */,
+				BEAAA1AF2166CC8B0022CD81 /* String+Convenience.swift in Sources */,
 				BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */,
+				BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */,
+				BE01C5922166F8800082C43A /* FQA'sVC.swift in Sources */,
+				BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */,
+				BEAAA1A72166CB310022CD81 /* Post.swift in Sources */,
+				BEAAA1AB2166CC140022CD81 /* cellPost.swift in Sources */,
+				BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */,
+				BEAAA1B42166CCEA0022CD81 /* PostVC.swift in Sources */,
+				BEAAA1B22166CCC40022CD81 /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +514,10 @@
 		};
 		BEAAA19E21669F860022CD81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G9TEZDPEH;
 				INFOPLIST_FILE = Islam/Info.plist;
@@ -291,6 +527,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = NA.Islam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Islam/Supporting Files/Islam-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +536,10 @@
 		};
 		BEAAA19F21669F860022CD81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8G9TEZDPEH;
 				INFOPLIST_FILE = Islam/Info.plist;
@@ -309,6 +549,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = NA.Islam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Islam/Supporting Files/Islam-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
