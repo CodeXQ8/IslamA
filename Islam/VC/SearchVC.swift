@@ -41,7 +41,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
         
         self.navigationItem.titleView = searchController.searchBar
         
-        self.definesPresentationContext = false
+         self.definesPresentationContext = true
         
         
        // uisearchBar.delegate = self
@@ -114,7 +114,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            let selectedPost = posts![indexPath.row]
+            let selectedPost = currentPosts![indexPath.row]
             
             let postVC = segue.destination as? PostVC
             postVC?.post = selectedPost

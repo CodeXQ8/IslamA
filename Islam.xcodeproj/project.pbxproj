@@ -43,6 +43,7 @@
 		BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */; };
 		BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */; };
 		BEAE106121692B08003B01DD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAE106021692B08003B01DD /* CollectionViewCell.swift */; };
+		BEAE106321692FF6003B01DD /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAE106221692FF6003B01DD /* Page.swift */; };
 		BEC21A0C2167E5A100F9334F /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0A2167E5A000F9334F /* Logo.png */; };
 		BEC21A0D2167E5A100F9334F /* Logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0B2167E5A100F9334F /* Logo3.png */; };
 		BEC21A0F21680E3600F9334F /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC21A0E21680E3600F9334F /* ContainerVC.swift */; };
@@ -91,6 +92,7 @@
 		BEAAA2222166DD290022CD81 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		BEAE106021692B08003B01DD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BEAE106221692FF6003B01DD /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		BEC21A0A2167E5A000F9334F /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		BEC21A0B2167E5A100F9334F /* Logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo3.png; sourceTree = "<group>"; };
 		BEC21A0E21680E3600F9334F /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				BEAAA1A52166CB300022CD81 /* Post.swift */,
+				BEAE106221692FF6003B01DD /* Page.swift */,
 				BEAAA1A62166CB300022CD81 /* PostRequest.swift */,
 			);
 			path = Wordpress;
@@ -397,6 +400,7 @@
 				BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */,
 				BEAAA1B42166CCEA0022CD81 /* PostVC.swift in Sources */,
 				BEAAA1B22166CCC40022CD81 /* SearchVC.swift in Sources */,
+				BEAE106321692FF6003B01DD /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

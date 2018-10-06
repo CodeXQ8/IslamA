@@ -11,31 +11,47 @@ import UIKit
 class ContainerVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+        var pageArray = Array<Page>()
+        var pages = Array<Page>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchPages()
+
+        collectionView.reloadData()
         collectionView.delegate = self
         collectionView.dataSource = self
         
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func fetchPages() {
+        let siteURL = "https://islamexplored.org/wp-json/wp/v2"
+        
+        let postRequest = PostRequest(url:siteURL, page:1, perPage:100)
+        postRequest.fetchpages(completionHandler: { pages, error in
+            if let newPages = pages {
+                DispatchQueue.main.async {
+                    self.pageArray = newPages
+                    for page in self.pageArray {
+                        if page.id == 1019 ||   page.id == 1326 || page.id == 1066{
+                            self.pages.append(page)
+                            print(self.pages.count)
+                        }
+                    }
+                    self.collectionView.reloadData()
+                }
+            }
+        })
+        
     }
-    */
 
 }
 extension ContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return pages.count
     }
     
     
@@ -43,8 +59,8 @@ extension ContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
         
-        let titleLbl = "house"
-        let exceprtLbl = "$3,540,000 "
+        let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
+        let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
         
         cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
         cell.layer.shadowRadius = 5

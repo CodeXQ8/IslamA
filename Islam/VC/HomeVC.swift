@@ -19,6 +19,7 @@ class HomeVC: UIViewController{
     
     @IBOutlet weak var childVC: UIView!
     
+
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
     var postsMisconceptions = Array<Post>()
@@ -81,6 +82,8 @@ class HomeVC: UIViewController{
         fetchFQA()
         fetchMisconceptions()
     }
+    
+ 
     
     func fetchArticles() {
         let siteURL = "https://islamexplored.org/wp-json/wp/v2"

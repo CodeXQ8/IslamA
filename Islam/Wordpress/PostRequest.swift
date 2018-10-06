@@ -95,7 +95,58 @@ public class PostRequest: NSObject
     }
 
     
-    
+    public func fetchpages (completionHandler:@escaping (Array<Page>?, Error?) -> Void) {
+        requestURL = baseURL + "/pages"
+        isFirstParameter = true
+        if let page = self.page {
+            self.appendParameter("page", page)
+        }
+        
+        if let categories = self.categories {
+            self.appendParameter("categories", categories)
+        }
+        
+        if let perPage = self.perPage {
+            self.appendParameter("per_page", perPage)
+        }
+        
+        if let search = self.search {
+            self.appendParameter("search", search)
+        }
+        
+        let url = URL(string: requestURL)!
+        print(requestURL)
+        let urlSession = URLSession.shared
+        
+        // (Data?, URLResponse?, Error?)
+        let dataTask = urlSession.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+            if error != nil {
+                completionHandler(nil, error);
+                return;
+            }
+            var jsonError: Error?
+            var jsonResult:Any?
+            do {
+                jsonResult = try JSONSerialization.jsonObject(with:data!, options:[])
+            } catch let error {
+                jsonError = error
+                jsonResult = nil
+            }
+            
+            var pages:Array<Page> = []
+            if let postArray = jsonResult as? [Dictionary<String, Any>] {
+                for postDictionary in postArray {
+                    if let page = Page(data:postDictionary as Dictionary<String, AnyObject>) {
+                        // print(post)
+                        pages.append(page)
+                    }
+                }
+            }
+            completionHandler(pages, jsonError);
+        })
+        
+        dataTask.resume()
+    }
     
     
     

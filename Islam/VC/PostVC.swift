@@ -17,6 +17,8 @@ class PostVC: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var postContent: UITextView!
     
     var html : String = " "
+    var postTitle  : String = " "
+    
     var containerHeight = CGFloat()
     var contentString = String()
     var index : Int = 0
@@ -25,6 +27,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
     var post: Post? {
         didSet {
             html = (post?.content)!
+            postTitle = (post?.title)!
         }
     }
     
@@ -41,15 +44,16 @@ class PostVC: UIViewController, WKNavigationDelegate {
         WKView.scrollView.showsVerticalScrollIndicator = false
         WKView.backgroundColor = UIColor .clear;
         WKView.clipsToBounds = true
-        WKView.loadHTML(html: html)
+      
+        WKView.loadHTML(html: html, title: postTitle)
     }
 }
 extension WKWebView {
     
-    func loadHTML(html: String) {
+    func loadHTML(html: String, title: String) {
         let htmlString = """
         <link rel="stylesheet" type="text/css" href="style.css">
-        <h1> String(htmlEncodedString:post.title) + </h1>
+        <h1> \(String(htmlEncodedString:title)) </h1>
         <meta name="viewport" content="initial-scale=1.0" />
         <span>\(html)</span>
         """
