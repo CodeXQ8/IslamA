@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftSoup
 
 class PostVC: UIViewController, WKNavigationDelegate {
     
@@ -48,6 +49,7 @@ extension WKWebView {
     func loadHTML(html: String) {
         let htmlString = """
         <link rel="stylesheet" type="text/css" href="style.css">
+        <h1> String(htmlEncodedString:post.title) + </h1>
         <meta name="viewport" content="initial-scale=1.0" />
         <span>\(html)</span>
         """

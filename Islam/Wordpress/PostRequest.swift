@@ -94,6 +94,11 @@ public class PostRequest: NSObject
         dataTask.resume()
     }
 
+    
+    
+    
+    
+    
     private func appendParameter (_ name:String, _ value:Any) {
         if isFirstParameter {
             requestURL += "?\(name)=\(value)"
