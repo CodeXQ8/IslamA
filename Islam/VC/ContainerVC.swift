@@ -11,6 +11,7 @@ import UIKit
 class ContainerVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewB: UICollectionView!
     
         var pageArray = Array<Page>()
         var pages = Array<Page>()
@@ -22,7 +23,7 @@ class ContainerVC: UIViewController {
         collectionView.reloadData()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+          
     }
 
     func fetchPages() {
@@ -50,24 +51,43 @@ class ContainerVC: UIViewController {
 extension ContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        if collectionView == self.collectionView {
+            return pages.count // Replace with count of your data for collectionViewA
+        }
         return pages.count
     }
     
     
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
-        
-        let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
-        let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
-        
-        cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
-        cell.layer.shadowRadius = 5
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0 )
-        cell.layer.shadowOpacity = 0.1
-        
-        return cell
+        if collectionView == self.collectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
+            
+            let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
+            let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
+            
+            cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
+            cell.layer.shadowRadius = 5
+            cell.layer.shadowOffset = CGSize(width: 0, height: 0 )
+            cell.layer.shadowOpacity = 0.1
+            
+            return cell
+        } else {
+            if collectionView == self.collectionViewB {
+                guard let cell = collectionViewB.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
+                
+                let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
+                let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
+                
+                cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
+                cell.layer.shadowRadius = 5
+                cell.layer.shadowOffset = CGSize(width: 0, height: 0 )
+                cell.layer.shadowOpacity = 0.1
+                
+                return cell
+            }
+        }
+     return CollectionViewCell()
         
     }
     
