@@ -47,6 +47,7 @@
 		BEC21A0C2167E5A100F9334F /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0A2167E5A000F9334F /* Logo.png */; };
 		BEC21A0D2167E5A100F9334F /* Logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC21A0B2167E5A100F9334F /* Logo3.png */; };
 		BEC21A0F21680E3600F9334F /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC21A0E21680E3600F9334F /* ContainerVC.swift */; };
+		BEFFFD0921698221004B21AA /* CollectionViewCellF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		BEC21A0A2167E5A000F9334F /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		BEC21A0B2167E5A100F9334F /* Logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo3.png; sourceTree = "<group>"; };
 		BEC21A0E21680E3600F9334F /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				BEAAA1AA2166CC140022CD81 /* cellPost.swift */,
 				BEAE106021692B08003B01DD /* CollectionViewCell.swift */,
+				BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAAA1A32166CA680022CD81 /* HomeVC.swift in Sources */,
+				BEFFFD0921698221004B21AA /* CollectionViewCellF.swift in Sources */,
 				BEAAA1A82166CB310022CD81 /* PostRequest.swift in Sources */,
 				BEAAA1AF2166CC8B0022CD81 /* String+Convenience.swift in Sources */,
 				BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */,

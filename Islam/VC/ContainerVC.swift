@@ -10,8 +10,9 @@ import UIKit
 
 class ContainerVC: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionViewB: UICollectionView!
+
+    @IBOutlet weak var collectionViewA: UICollectionView!
+    @IBOutlet weak var collectionViewF: UICollectionView!
     
         var pageArray = Array<Page>()
         var pages = Array<Page>()
@@ -20,10 +21,15 @@ class ContainerVC: UIViewController {
         super.viewDidLoad()
         fetchPages()
 
-        collectionView.reloadData()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-          
+    
+        collectionViewA.delegate = self
+        collectionViewA.dataSource = self
+        collectionViewA.reloadData()
+        
+        collectionViewF.delegate = self
+        collectionViewF.dataSource = self
+        collectionViewF.reloadData()
+
     }
 
     func fetchPages() {
@@ -40,7 +46,8 @@ class ContainerVC: UIViewController {
                             print(self.pages.count)
                         }
                     }
-                    self.collectionView.reloadData()
+                    self.collectionViewA.reloadData()
+                    self.collectionViewF.reloadData()
                 }
             }
         })
@@ -51,7 +58,7 @@ class ContainerVC: UIViewController {
 extension ContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
+        if collectionView == self.collectionViewA {
             return pages.count // Replace with count of your data for collectionViewA
         }
         return pages.count
@@ -60,36 +67,32 @@ extension ContainerVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.collectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
+        if collectionView == self.collectionViewA {
+            guard let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
             
             let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
             let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
             
             cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
-            cell.layer.shadowRadius = 5
-            cell.layer.shadowOffset = CGSize(width: 0, height: 0 )
-            cell.layer.shadowOpacity = 0.1
+
             
             return cell
         } else {
-            if collectionView == self.collectionViewB {
-                guard let cell = collectionViewB.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return CollectionViewCell() }
+            
+                guard let cell : CollectionViewCellF = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellF", for: indexPath) as? CollectionViewCellF else { return CollectionViewCellF() }
                 
                 let titleLbl = String(htmlEncodedString:pages[indexPath.row].title)
                 let exceprtLbl = String(htmlEncodedString:pages[indexPath.row].excerpt)
                 
                 cell.updateCell(titleLbl: titleLbl, exceprtLbl: exceprtLbl)
-                cell.layer.shadowRadius = 5
-                cell.layer.shadowOffset = CGSize(width: 0, height: 0 )
-                cell.layer.shadowOpacity = 0.1
+
                 
                 return cell
             }
-        }
-     return CollectionViewCell()
-        
+    
     }
+    
+
     
     //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     //        self.indexCell = indexPath.item
