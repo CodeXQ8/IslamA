@@ -23,10 +23,10 @@ class HomeVC: UIViewController{
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
     var postsMisconceptions = Array<Post>()
-
+ 
     let articles = 35
     let fqa = 36
-    let misconceptions = 37
+    let foundation = 158
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +36,12 @@ class HomeVC: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         SideMenuManager.default.menuFadeStatusBar = false
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if postType == 0 {
-            tableView.isHidden = true
-              childVC.isHidden = false
-        } else {
-            tableView.isHidden = false
-            childVC.isHidden = true
-        }
         
         navigationSetUp()
         if isReload == false  {
@@ -63,27 +57,37 @@ class HomeVC: UIViewController{
 //        navigationController?.navigationBar.shadowImage = UIImage()
         switch postType
         {
-        case articles :
-           navigationItem.title = "Articles"
-        case misconceptions :
-           navigationItem.title = "Misconceptions"
-            
         case fqa :
            navigationItem.title = "FQA's"
             
         default:
-            navigationItem.title = "Home"
+            navigationItem.title = "Articles"
         }
     }
 
     
     func fetchAllPosts(){
+        fetchFoundation()
         fetchArticles()
         fetchFQA()
-        fetchMisconceptions()
+        
     }
+
     
- 
+    func fetchFoundation() {
+        let siteURL = "https://islamexplored.org/wp-json/wp/v2"
+        
+        let postRequest = PostRequest(url:siteURL, page:1, perPage:100, categories: foundation)
+        postRequest.fetchLastPosts(completionHandler: { posts, error in
+            if let newposts = posts {
+                DispatchQueue.main.async {
+                    self.postsArticles = newposts
+                    print(self.postsArticles)
+                }
+            }
+        })
+        
+    }
     
     func fetchArticles() {
         let siteURL = "https://islamexplored.org/wp-json/wp/v2"
@@ -91,9 +95,12 @@ class HomeVC: UIViewController{
         let postRequest = PostRequest(url:siteURL, page:1, perPage:100, categories: articles)
         postRequest.fetchLastPosts(completionHandler: { posts, error in
             if let newposts = posts {
+                for post in newposts {
                 DispatchQueue.main.async {
-                    self.postsArticles = newposts
+                    self.postsArticles.append(post) 
+                    print(self.postsArticles)
                     self.tableView.reloadData()
+                }
                 }
             }
         })
@@ -115,21 +122,6 @@ class HomeVC: UIViewController{
         })
         
     }
-    
-    func fetchMisconceptions() {
-        let siteURL = "https://islamexplored.org/wp-json/wp/v2"
-        
-        let postRequest = PostRequest(url:siteURL, page:1, perPage:100, categories: misconceptions)
-        postRequest.fetchLastPosts(completionHandler: { posts, error in
-            if let newpostsM = posts {
-                DispatchQueue.main.async {
-                    self.postsMisconceptions = newpostsM
-                    self.tableView.reloadData()
-                }
-            }
-        })
-        
-    }
 }
 
 
@@ -142,9 +134,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch postType
         {
-        case misconceptions :
-        return postsMisconceptions.count
-            
         case fqa :
         return postsFqa.count
             
@@ -158,12 +147,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
         switch postType
         {
-        case misconceptions :
-             let post = postsMisconceptions[indexPath.row]
-             let title = String(htmlEncodedString:post.title)
-             let contentLbl = String(htmlEncodedString:post.excerpt)
-             cell.updateCell(title: title,contentLbl: contentLbl)
-            
         case fqa :
              let post = postsFqa[indexPath.row]
              let title = String(htmlEncodedString:post.title)
@@ -190,11 +173,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 
                 switch postType
                 {
-                case misconceptions :
-                    let selectedPost = postsMisconceptions[indexPath.row]
-                    let postVC = segue.destination as? PostVC
-                    postVC?.post = selectedPost
-                    postVC?.index = indexPath.row
                 case fqa :
                     let selectedPost = postsFqa[indexPath.row]
                     let postVC = segue.destination as? PostVC
@@ -208,7 +186,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 }
         }
         let SearchVC = segue.destination as? SearchVC
-        SearchVC?.posts = postsFqa + postsArticles + postsMisconceptions
+        SearchVC?.posts =  postsArticles + postsFqa 
     }
 }
 

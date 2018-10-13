@@ -17,27 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="gUZ-tK-Uec">
-                                <rect key="frame" x="82.666666666666686" y="144" width="210" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoB" translatesAutoresizingMaskIntoConstraints="NO" id="ssA-Jw-jex">
+                                <rect key="frame" x="37.666666666666657" y="99" width="300" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="OMj-j1-ndD"/>
-                                    <constraint firstAttribute="height" constant="150" id="fYd-Ox-s2i"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo3" translatesAutoresizingMaskIntoConstraints="NO" id="JHG-wl-EHv">
-                                <rect key="frame" x="62.666666666666657" y="304" width="249.99999999999997" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="7dG-WK-AWf"/>
-                                    <constraint firstAttribute="height" constant="75" id="p4Q-0K-BXc"/>
+                                    <constraint firstAttribute="width" constant="300" id="3KA-ej-j85"/>
+                                    <constraint firstAttribute="height" constant="200" id="3ez-NP-muQ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.49019607840000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gUZ-tK-Uec" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KUI-0q-thN"/>
-                            <constraint firstItem="JHG-wl-EHv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aWN-PH-eId"/>
-                            <constraint firstItem="gUZ-tK-Uec" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="i27-Ei-CU5"/>
-                            <constraint firstItem="JHG-wl-EHv" firstAttribute="top" secondItem="gUZ-tK-Uec" secondAttribute="bottom" constant="10" id="jKq-yS-leX"/>
+                            <constraint firstItem="ssA-Jw-jex" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="1AB-a1-8GC"/>
+                            <constraint firstItem="ssA-Jw-jex" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="q6u-cF-3gZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -48,7 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo-1" width="111" height="124"/>
-        <image name="Logo3" width="419" height="74"/>
+        <image name="LogoB" width="900" height="480"/>
     </resources>
 </document>

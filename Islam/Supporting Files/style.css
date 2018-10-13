@@ -55,7 +55,7 @@
 
     blockquote {
 
-        border-left: 5px solid #319594;
+        border-left: 5px solid rgba(100,148,196,0.94);
         margin: 1.5em 10px;
         line-height: 18px;
         padding: 0.5em 10px;
