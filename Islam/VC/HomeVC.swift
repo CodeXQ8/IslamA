@@ -39,6 +39,10 @@ class HomeVC: UIViewController{
         
     }
     
+    @IBAction func ContactUsBtnWasPrssed(_ sender: Any) {
+        guard let url = URL(string: "https://islamexplored.org/contact-us/") else { return }
+        UIApplication.shared.open(url)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -82,7 +86,6 @@ class HomeVC: UIViewController{
             if let newposts = posts {
                 DispatchQueue.main.async {
                     self.postsArticles = newposts
-                    print(self.postsArticles)
                 }
             }
         })
@@ -98,7 +101,6 @@ class HomeVC: UIViewController{
                 for post in newposts {
                 DispatchQueue.main.async {
                     self.postsArticles.append(post) 
-                    print(self.postsArticles)
                     self.tableView.reloadData()
                 }
                 }

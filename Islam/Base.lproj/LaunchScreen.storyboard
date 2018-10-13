@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoB" translatesAutoresizingMaskIntoConstraints="NO" id="ssA-Jw-jex">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ssA-Jw-jex">
                                 <rect key="frame" x="37.666666666666657" y="99" width="300" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="3KA-ej-j85"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.21960784310000001" green="0.49019607840000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ssA-Jw-jex" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="1AB-a1-8GC"/>
                             <constraint firstItem="ssA-Jw-jex" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="q6u-cF-3gZ"/>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoB" width="900" height="480"/>
+        <image name="LogoIcon" width="500" height="500"/>
     </resources>
 </document>

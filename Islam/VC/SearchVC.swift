@@ -31,24 +31,20 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
         super.viewDidLoad()
         
         self.searchController = UISearchController(searchResultsController:  nil)
-        
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
-        
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = false
-        
         self.navigationItem.titleView = searchController.searchBar
+        self.definesPresentationContext = true
+        self.searchController.searchBar.tintColor = UIColor.darkGray
         
-         self.definesPresentationContext = true
-        
-        
-       // uisearchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
     }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
       print("1")
@@ -125,7 +121,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
-
 
 
 

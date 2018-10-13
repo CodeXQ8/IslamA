@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F52D4CBA64533D305C64580 /* Pods_Islam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */; };
-		BE0D65C02171BA0500C25A2D /* LogoB.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0D65BF2171BA0400C25A2D /* LogoB.png */; };
 		BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE113D7E21673AEB0011FE48 /* MenuTVC.swift */; };
+		BE1D430621726D1400559496 /* LogoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1D430521726D1400559496 /* LogoIcon.png */; };
 		BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA18E21669F840022CD81 /* AppDelegate.swift */; };
 		BEAAA19421669F840022CD81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA19221669F840022CD81 /* Main.storyboard */; };
 		BEAAA19621669F860022CD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAAA19521669F860022CD81 /* Assets.xcassets */; };
@@ -50,9 +50,9 @@
 		0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Islam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.release.xcconfig"; sourceTree = "<group>"; };
 		95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.debug.xcconfig"; sourceTree = "<group>"; };
-		BE0D65BF2171BA0400C25A2D /* LogoB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoB.png; sourceTree = "<group>"; };
 		BE113D7E21673AEB0011FE48 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
-		BEAAA18B21669F840022CD81 /* Islam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Islam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1D430521726D1400559496 /* LogoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoIcon.png; sourceTree = "<group>"; };
+		BEAAA18B21669F840022CD81 /* Islam Explored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Islam Explored.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAAA18E21669F840022CD81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAAA19321669F840022CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEAAA19521669F860022CD81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		BEAAA18C21669F840022CD81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEAAA18B21669F840022CD81 /* Islam.app */,
+				BEAAA18B21669F840022CD81 /* Islam Explored.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 		BEC21A092167E58400F9334F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BE0D65BF2171BA0400C25A2D /* LogoB.png */,
+				BE1D430521726D1400559496 /* LogoIcon.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -244,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEAAA18A21669F840022CD81 /* Islam */ = {
+		BEAAA18A21669F840022CD81 /* Islam Explored */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEAAA19D21669F860022CD81 /* Build configuration list for PBXNativeTarget "Islam" */;
+			buildConfigurationList = BEAAA19D21669F860022CD81 /* Build configuration list for PBXNativeTarget "Islam Explored" */;
 			buildPhases = (
 				8792028D48FE05AF70579EC9 /* [CP] Check Pods Manifest.lock */,
 				BEAAA18721669F840022CD81 /* Sources */,
@@ -258,9 +258,9 @@
 			);
 			dependencies = (
 			);
-			name = Islam;
+			name = "Islam Explored";
 			productName = Islam;
-			productReference = BEAAA18B21669F840022CD81 /* Islam.app */;
+			productReference = BEAAA18B21669F840022CD81 /* Islam Explored.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEAAA18621669F840022CD81 /* Build configuration list for PBXProject "Islam" */;
+			buildConfigurationList = BEAAA18621669F840022CD81 /* Build configuration list for PBXProject "Islam Explored" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -292,7 +292,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEAAA18A21669F840022CD81 /* Islam */,
+				BEAAA18A21669F840022CD81 /* Islam Explored */,
 			);
 		};
 /* End PBXProject section */
@@ -304,7 +304,6 @@
 			files = (
 				BEAAA19921669F860022CD81 /* LaunchScreen.storyboard in Resources */,
 				BEAAA1EE2166CF300022CD81 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				BE0D65C02171BA0500C25A2D /* LogoB.png in Resources */,
 				BEAAA1B02166CC8B0022CD81 /* style.css in Resources */,
 				BEAAA2152166CF300022CD81 /* AndadaSC-Bold.otf in Resources */,
 				BEAAA20A2166CF300022CD81 /* Andada-Italic.otf in Resources */,
@@ -312,6 +311,7 @@
 				BEAAA2172166CF300022CD81 /* Andada-Regular.otf in Resources */,
 				BEAAA20F2166CF300022CD81 /* Andada-BoldItalic.otf in Resources */,
 				BEAAA1FA2166CF300022CD81 /* AndadaSC-Regular.otf in Resources */,
+				BE1D430621726D1400559496 /* LogoIcon.png in Resources */,
 				BEAAA2142166CF300022CD81 /* AndadaSC-BoldItalic.otf in Resources */,
 				BEAAA2072166CF300022CD81 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				BEAAA20B2166CF300022CD81 /* OpenSans-SemiBold.ttf in Resources */,
@@ -574,7 +574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEAAA18621669F840022CD81 /* Build configuration list for PBXProject "Islam" */ = {
+		BEAAA18621669F840022CD81 /* Build configuration list for PBXProject "Islam Explored" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAAA19B21669F860022CD81 /* Debug */,
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEAAA19D21669F860022CD81 /* Build configuration list for PBXNativeTarget "Islam" */ = {
+		BEAAA19D21669F860022CD81 /* Build configuration list for PBXNativeTarget "Islam Explored" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEAAA19E21669F860022CD81 /* Debug */,
