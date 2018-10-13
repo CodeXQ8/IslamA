@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F52D4CBA64533D305C64580 /* Pods_Islam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */; };
+		A775A69854C11C25FE07C96D /* Pods_Islam_Explored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D071FAA52A88ED6F7C1B9F5 /* Pods_Islam_Explored.framework */; };
 		BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE113D7E21673AEB0011FE48 /* MenuTVC.swift */; };
 		BE1D430621726D1400559496 /* LogoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1D430521726D1400559496 /* LogoIcon.png */; };
 		BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA18E21669F840022CD81 /* AppDelegate.swift */; };
@@ -48,8 +48,9 @@
 
 /* Begin PBXFileReference section */
 		0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Islam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.release.xcconfig"; sourceTree = "<group>"; };
-		95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Islam/Pods-Islam.debug.xcconfig"; sourceTree = "<group>"; };
+		168072A09A4A161E9473C9CD /* Pods-Islam Explored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam Explored.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored.debug.xcconfig"; sourceTree = "<group>"; };
+		2D071FAA52A88ED6F7C1B9F5 /* Pods_Islam_Explored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Islam_Explored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6705457F5A3F31F4ACD8666 /* Pods-Islam Explored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam Explored.release.xcconfig"; path = "Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored.release.xcconfig"; sourceTree = "<group>"; };
 		BE113D7E21673AEB0011FE48 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		BE1D430521726D1400559496 /* LogoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoIcon.png; sourceTree = "<group>"; };
 		BEAAA18B21669F840022CD81 /* Islam Explored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Islam Explored.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F52D4CBA64533D305C64580 /* Pods_Islam.framework in Frameworks */,
+				A775A69854C11C25FE07C96D /* Pods_Islam_Explored.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +228,8 @@
 		D427DC18CFA474056101433A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */,
-				6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */,
+				168072A09A4A161E9473C9CD /* Pods-Islam Explored.debug.xcconfig */,
+				A6705457F5A3F31F4ACD8666 /* Pods-Islam Explored.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -237,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				0D3D720F403880BD3EEAC729 /* Pods_Islam.framework */,
+				2D071FAA52A88ED6F7C1B9F5 /* Pods_Islam_Explored.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -337,7 +339,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Islam/Pods-Islam-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -346,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Islam/Pods-Islam-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8792028D48FE05AF70579EC9 /* [CP] Check Pods Manifest.lock */ = {
@@ -360,7 +362,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Islam-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Islam Explored-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,7 +532,7 @@
 		};
 		BEAAA19E21669F860022CD81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95BDDFB96FA3A07BAAAE2E23 /* Pods-Islam.debug.xcconfig */;
+			baseConfigurationReference = 168072A09A4A161E9473C9CD /* Pods-Islam Explored.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -552,7 +554,7 @@
 		};
 		BEAAA19F21669F860022CD81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F4C75B995BE0E7D07BD45B0 /* Pods-Islam.release.xcconfig */;
+			baseConfigurationReference = A6705457F5A3F31F4ACD8666 /* Pods-Islam Explored.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
