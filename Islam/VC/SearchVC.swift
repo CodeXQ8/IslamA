@@ -43,6 +43,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+
     }
     
     
@@ -107,10 +108,27 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         performSegue(withIdentifier: "showDetail1", sender: self)
     }
     
+    
+    func contain(post: Post) -> Bool{
+        
+        for recentPost in recentlyViewdPost {
+            if recentPost.id == post.id{
+                return true
+            }
+        }
+        return false
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedPost = currentPosts![indexPath.row]
+            let postContain = contain(post: selectedPost)
+            if postContain == false {
+                recentlyViewdPost.insert(selectedPost, at: 0)
+                isReload = false
+            }
             
             let postVC = segue.destination as? PostVC
             postVC?.post = selectedPost

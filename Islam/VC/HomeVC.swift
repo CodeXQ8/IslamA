@@ -8,12 +8,14 @@
 
 import UIKit
 import SideMenu
-
+import EmptyDataSet_Swift
 
 var postType = 0
 var isReload = true
+ var recentlyViewdPost = Array<Post>()
 
-class HomeVC: UIViewController{
+class HomeVC: UIViewController {
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,27 +24,31 @@ class HomeVC: UIViewController{
 
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
-    var postsMisconceptions = Array<Post>()
- 
+   
+    
     let articles = 35
     let fqa = 36
     let foundation = 158
+    let recentlyViewd = 1
+    let aboutUs = 2
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
   
-    
-        fetchAllPosts()
-        tableView.delegate = self
-        tableView.dataSource = self
-        SideMenuManager.default.menuFadeStatusBar = false
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         
+        if postType == aboutUs {
+            
+        }
+        
+        fetchAllPosts()
+        SideMenuManager.default.menuFadeStatusBar = false
     }
     
-    @IBAction func ContactUsBtnWasPrssed(_ sender: Any) {
-        guard let url = URL(string: "https://islamexplored.org/contact-us/") else { return }
-        UIApplication.shared.open(url)
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -50,20 +56,24 @@ class HomeVC: UIViewController{
         navigationSetUp()
         if isReload == false  {
         tableView.reloadData()
+            if recentlyViewdPost.count != 0 {
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+            }
         isReload = true
         }
     }
 
 
     func navigationSetUp(){
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
+
         switch postType
         {
         case fqa :
            navigationItem.title = "FQA's"
-            
+        case recentlyViewd :
+            navigationItem.title = "Recently Viewd"
+        case aboutUs :
+            navigationItem.title = "About Us"
         default:
             navigationItem.title = "Articles"
         }
@@ -124,10 +134,27 @@ class HomeVC: UIViewController{
         })
         
     }
+    
+    @IBAction func ContactUsBtnWasPrssed(_ sender: Any) {
+        guard let url = URL(string: "https://islamexplored.org/contact-us/") else { return }
+        UIApplication.shared.open(url)
+    }
 }
 
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSource, EmptyDataSetDelegate{
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "You have no recently viewed posts"
+        return NSAttributedString(string: str)
+    }
+    
+//    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+//        let str = "You haven't saved any propteries. Start exploring and save porpteries now."
+//        return NSAttributedString(string: str)
+//    }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -138,6 +165,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         {
         case fqa :
         return postsFqa.count
+            
+        case recentlyViewd :
+            return recentlyViewdPost.count
             
         default:
         return postsArticles.count
@@ -154,7 +184,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
              let title = String(htmlEncodedString:post.title)
              let contentLbl = String(htmlEncodedString:post.excerpt)
              cell.updateCell(title: title,contentLbl: contentLbl)
-        
+        case recentlyViewd :
+            let post = recentlyViewdPost[indexPath.row]
+            let title = String(htmlEncodedString:post.title)
+            let contentLbl = String(htmlEncodedString:post.excerpt)
+            cell.updateCell(title: title,contentLbl: contentLbl)
+            
         default:
              let post = postsArticles[indexPath.row]
              let title = String(htmlEncodedString:post.title)
@@ -162,6 +197,18 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
              cell.updateCell(title: title,contentLbl: contentLbl)
         }
             return cell
+        
+    }
+    
+    
+    func contain(post: Post) -> Bool{
+        
+        for recentPost in recentlyViewdPost {
+            if recentPost.id == post.id{
+                return true
+            }
+        }
+        return false
         
     }
     
@@ -177,11 +224,33 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 {
                 case fqa :
                     let selectedPost = postsFqa[indexPath.row]
+              
+                    let postContain = contain(post: selectedPost)
+                    if postContain == false {
+                        recentlyViewdPost.insert(selectedPost, at: 0)
+                        print("208")
+                    }
+                        
+                    
                     let postVC = segue.destination as? PostVC
                     postVC?.post = selectedPost
                     postVC?.index = indexPath.row
+                case recentlyViewd :
+                    if recentlyViewdPost.count == 0 {
+
+                    } else {
+                    let selectedPost = recentlyViewdPost[indexPath.row]
+                    let postVC = segue.destination as? PostVC
+                    postVC?.post = selectedPost
+                    postVC?.index = indexPath.row
+                    }
                 default:
                     let selectedPost = postsArticles[indexPath.row]
+                    let postContain = contain(post: selectedPost)
+                      if postContain == false {
+                        recentlyViewdPost.insert(selectedPost, at: 0)
+                        print("225")
+                    }
                     let postVC = segue.destination as? PostVC
                     postVC?.post = selectedPost
                     postVC?.index = indexPath.row
