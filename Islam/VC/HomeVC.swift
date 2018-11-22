@@ -12,7 +12,8 @@ import EmptyDataSet_Swift
 
 var postType = 0
 var isReload = true
- var recentlyViewdPost = Array<Post>()
+var recentlyViewdPost = Array<Post>()
+var savedForLaterArray = Array<Post>()
 
 class HomeVC: UIViewController {
     
@@ -24,13 +25,14 @@ class HomeVC: UIViewController {
 
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
+    var allPosts = Array<Post>()
    
     
     let articles = 35
     let fqa = 36
     let foundation = 158
     let recentlyViewd = 1
-    let aboutUs = 2
+    let savedForLater = 2
 
     
     
@@ -40,9 +42,7 @@ class HomeVC: UIViewController {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         
-        if postType == aboutUs {
-            
-        }
+     
         
         fetchAllPosts()
         SideMenuManager.default.menuFadeStatusBar = false
@@ -50,19 +50,55 @@ class HomeVC: UIViewController {
     
 
     
+    
+    func containPostId(postId: Int) -> Bool {
+         let exists = savedForLaterArray.contains(where: { (post) -> Bool in
+            if post.id == postId {
+                return true
+            } else {
+            return false
+            }
+        })
+        return exists
+    }
+    
+    
+    func getData(){
+        allPosts = postsArticles + postsFqa
+        
+        let data = defaults?.value(forKey: "savedPost") as? [Int]
+        if data != nil {
+            for postId in data! {
+            for post in allPosts {
+                if postId == post.id{
+                    let exists = containPostId(postId: postId)
+                    if exists != true {
+                            savedForLaterArray.append(post)
+                    }
+                }
+            }
+        }
+    }
+    }
+    
+
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        getData()
+        print("This is the saved for later array : \(savedForLaterArray)")
         navigationSetUp()
-        if isReload == false  {
+        if isReload == false  { /// Try to check which type
         tableView.reloadData()
-            if recentlyViewdPost.count != 0 {
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+            if recentlyViewdPost.count != 0 &&  savedForLaterArray.count != 0 {
+                tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
             }
         isReload = true
         }
     }
 
+    
+    
 
     func navigationSetUp(){
 
@@ -72,8 +108,8 @@ class HomeVC: UIViewController {
            navigationItem.title = "FQA's"
         case recentlyViewd :
             navigationItem.title = "Recently Viewd"
-        case aboutUs :
-            navigationItem.title = "About Us"
+        case savedForLater :
+            navigationItem.title = "Saved for Later"
         default:
             navigationItem.title = "Articles"
         }
@@ -84,13 +120,12 @@ class HomeVC: UIViewController {
         fetchFoundation()
         fetchArticles()
         fetchFQA()
-        
     }
 
-    
+
     func fetchFoundation() {
         let siteURL = "https://islamexplored.org/wp-json/wp/v2"
-        
+
         let postRequest = PostRequest(url:siteURL, page:1, perPage:100, categories: foundation)
         postRequest.fetchLastPosts(completionHandler: { posts, error in
             if let newposts = posts {
@@ -99,7 +134,7 @@ class HomeVC: UIViewController {
                 }
             }
         })
-        
+
     }
     
     func fetchArticles() {
@@ -110,7 +145,7 @@ class HomeVC: UIViewController {
             if let newposts = posts {
                 for post in newposts {
                 DispatchQueue.main.async {
-                    self.postsArticles.append(post) 
+                    self.postsArticles.append(post)
                     self.tableView.reloadData()
                 }
                 }
@@ -129,7 +164,6 @@ class HomeVC: UIViewController {
                     self.postsFqa = newpostsF
                     self.tableView.reloadData()
                 }
-                
             }
         })
         
@@ -139,20 +173,29 @@ class HomeVC: UIViewController {
         guard let url = URL(string: "https://islamexplored.org/contact-us/") else { return }
         UIApplication.shared.open(url)
     }
+    
+        var showDescription = false
 }
 
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSource, EmptyDataSetDelegate{
     
-    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "You have no recently viewed posts"
-        return NSAttributedString(string: str)
-    }
-    
-//    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-//        let str = "You haven't saved any propteries. Start exploring and save porpteries now."
+//    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+//        let str = "You have no recently viewed posts"
 //        return NSAttributedString(string: str)
 //    }
+
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+           var str = ""
+        if showDescription == true  {
+         str = "You have no recently viewed posts"
+        } else {
+            showDescription = true 
+            
+        }
+        return NSAttributedString(string: str)
+    }
     
     
     
@@ -168,6 +211,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
             
         case recentlyViewd :
             return recentlyViewdPost.count
+            
+        case savedForLater :
+            return savedForLaterArray.count
             
         default:
         return postsArticles.count
@@ -186,6 +232,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
              cell.updateCell(title: title,contentLbl: contentLbl)
         case recentlyViewd :
             let post = recentlyViewdPost[indexPath.row]
+            let title = String(htmlEncodedString:post.title)
+            let contentLbl = String(htmlEncodedString:post.excerpt)
+            cell.updateCell(title: title,contentLbl: contentLbl)
+        case savedForLater :
+            let post = savedForLaterArray[indexPath.row]
             let title = String(htmlEncodedString:post.title)
             let contentLbl = String(htmlEncodedString:post.excerpt)
             cell.updateCell(title: title,contentLbl: contentLbl)
@@ -228,7 +279,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     let postContain = contain(post: selectedPost)
                     if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
-                        print("208")
                     }
                         
                     
@@ -244,12 +294,21 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     postVC?.post = selectedPost
                     postVC?.index = indexPath.row
                     }
+                case savedForLater :
+                    if savedForLaterArray.count == 0 {
+                        
+                    } else {
+                        let selectedPost = savedForLaterArray[indexPath.row]
+                        let postVC = segue.destination as? PostVC
+                        postVC?.post = selectedPost
+                        postVC?.index = indexPath.row
+                    }
+                    
                 default:
                     let selectedPost = postsArticles[indexPath.row]
                     let postContain = contain(post: selectedPost)
                       if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
-                        print("225")
                     }
                     let postVC = segue.destination as? PostVC
                     postVC?.post = selectedPost
@@ -257,7 +316,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                 }
         }
         let SearchVC = segue.destination as? SearchVC
-        SearchVC?.posts =  postsArticles + postsFqa 
+        SearchVC?.posts =  postsArticles + postsFqa
+        
+        let PostVC = segue.destination as? PostVC
+        PostVC?.posts =  postsArticles + postsFqa
+        
+        
     }
 }
 
@@ -330,3 +394,22 @@ public extension UIDevice {
     }()
     
 }
+
+//
+//if savedForLaterArray.count != 0{
+//    for postInSavedPosts in savedForLaterArray {
+//        print(postId)
+//        print(postInSavedPosts.id)
+//
+//        if postId == postInSavedPosts.id{
+//            savedForLaterArray.append(post)
+//            print("save for later inside getdata function \(savedForLaterArray)")
+//        }
+//        else {
+//            print("The post is aleardy saved")
+//        }
+//    }
+//
+//} else {
+//    savedForLaterArray.append(post)
+//}

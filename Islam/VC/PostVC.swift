@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+let defaults = UserDefaults(suiteName: "Islam.Explored")
 
 class PostVC: UIViewController, WKNavigationDelegate {
     
@@ -18,22 +19,55 @@ class PostVC: UIViewController, WKNavigationDelegate {
     
     var html : String = " "
     var postTitle  : String = " "
+    var postId : Int = 0
     
     var containerHeight = CGFloat()
     var contentString = String()
     var index : Int = 0
     var isSaved = Bool ()
+    
+    var savedPost = [Int]()
+    var saved : Bool = false
 
+    var posts : [Post]?
+    
     var post: Post? {
         didSet {
             html = (post?.content)!
             postTitle = (post?.title)!
+            postId = (post?.id)!
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         webKitSetUp()
+    }
+    
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateSaveImage()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getData()
+    }
+    
+    func updateSaveImage(){
+     if let index = savedPost.index(of: postId) {
+     savedBtn.image = UIImage(named: "bookmark-fill")
+    } else {
+    savedBtn.image = UIImage(named: "bookmark")
+    }
+    
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+      //  storeData(savedPost: <#[Int]#>)
     }
 
     func webKitSetUp(){
@@ -47,6 +81,42 @@ class PostVC: UIViewController, WKNavigationDelegate {
       
         WKView.loadHTML(html: html, title: postTitle)
     }
+    
+    func storeData(savedPost : [Int]){
+        defaults?.set(savedPost, forKey: "savedPost")
+    }
+    
+    func getData(){
+        let data = defaults?.value(forKey: "savedPost")
+        if data != nil {
+            self.savedPost = data as! [Int]
+        } else {
+            
+        }
+    }
+//    [1403, 1173, 1632, 1475, 2637, 1493]
+    @IBOutlet weak var savedBtn: UIBarButtonItem!
+    @IBAction func SaveBtnWasPressed(_ sender: Any) {
+        
+        
+        if let index = savedPost.index(of: postId) {
+            savedPost.remove(at: index)
+            print(savedPost)
+            storeData(savedPost: savedPost)
+//            print(UserDefaults.standard.array(forKey: "savedPost"))
+            savedBtn.image = UIImage(named: "bookmark")
+        } else {
+            savedPost.append(postId)
+            print(savedPost)
+            storeData(savedPost: savedPost)
+//            print(UserDefaults.standard.array(forKey: "savedPost"))
+            savedBtn.image = UIImage(named: "bookmark-fill")
+        }
+        
+    }
+    
+    
+    
 }
 extension WKWebView {
     

@@ -13,7 +13,7 @@ class MenuTVC: UITableViewController{
     let articles = 35
     let fqa = 36
     let recentlyViewd = 1
-    let aboutUs = 2
+    let savedForLater = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +31,11 @@ class MenuTVC: UITableViewController{
             isReload = false
             dismiss(animated: true, completion: nil)
         case 2:
-            postType = recentlyViewd
+            postType = savedForLater
             isReload = false
             dismiss(animated: true, completion: nil)
         case 3:
-            postType = aboutUs
+            postType = recentlyViewd
             isReload = false
             dismiss(animated: true, completion: nil)
         default:
