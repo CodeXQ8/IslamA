@@ -15,6 +15,8 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
     @IBOutlet weak var tableView: UITableView!
     
     var posts : [Post]?
+  
+ 
     var currentPosts : [Post]?
 
     var post: Post? {
@@ -30,6 +32,7 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
         self.searchController = UISearchController(searchResultsController:  nil)
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
@@ -40,12 +43,23 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
         self.definesPresentationContext = true
         self.searchController.searchBar.tintColor = UIColor.darkGray
         
+   //     getDataRecentViewedPost()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+//        getDataRecentViewedPost()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+//        getDataRecentViewedPost()
+    }
     
     func updateSearchResults(for searchController: UISearchController) {
     }
@@ -79,6 +93,40 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
     
     
 //
+//    func storeData(savedForLaterInt : [Int]){
+//        defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
+//    }
+//
+//    func containRecentViewedPost(postId: Int) -> Bool {
+//        let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
+//            if post.id == postId {
+//                return true
+//            } else {
+//                return false
+//            }
+//        })
+//        return exists
+//    }
+    
+//    func getDataRecentViewedPost(){
+//        let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
+//        print("recent viewed post \(data)")
+//        if data != nil{
+//            for postId in data! {
+//                for post in posts! {
+//                    if postId == post.id{
+//                        let exists = containRecentViewedPost(postId: postId)
+//                        if exists != true {
+//                            recentlyViewdPost.append(post)
+//                        }
+//                    }
+//                }
+//            }
+//        } else {
+//
+//        }
+//    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         currentPosts = []
         searchBar.text = ""
@@ -119,15 +167,24 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedPost = currentPosts![indexPath.row]
-            let postContain = contain(post: selectedPost)
-            if postContain == false {
-                recentlyViewdPost.insert(selectedPost, at: 0)
-                isReload = false
-            }
+//            if let index = recentlyViewdInt.index(of: selectedPost.id) {
+//
+//            } else {
+//                recentlyViewdInt.insert(selectedPost.id, at: 0)
+//  //              HomeVC().storeData(savedForLaterInt: recentlyViewdInt)
+//            }
+            
+//            let postContain = contain(post: selectedPost)
+//            if postContain == false {
+//                recentlyViewdPost.insert(selectedPost, at: 0)
+//                isReload = false
+//            }
             
             let postVC = segue.destination as? PostVC
             postVC?.post = selectedPost

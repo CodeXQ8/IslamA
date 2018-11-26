@@ -19,6 +19,7 @@ public struct Post : CustomStringConvertible
     public let title: String
     public let content: String
     public let excerpt: String
+    public let link: String
     
 
     public var description: String {
@@ -43,7 +44,9 @@ public struct Post : CustomStringConvertible
             let contentDictionary = data["content"] as? Dictionary<String, Any>,
             let content = contentDictionary["rendered"] as? String,
             let excerptDictionary = data["excerpt"] as? Dictionary<String, Any>,
-            let excerpt = excerptDictionary["rendered"] as? String
+            let excerpt = excerptDictionary["rendered"] as? String,
+          //  let linkDictionary = data["link"] as? Dictionary<String, Any>,
+            let link = data["link"] as? String
             else {
                 return nil
         }
@@ -53,6 +56,8 @@ public struct Post : CustomStringConvertible
         self.title = title
         self.content = content
         self.excerpt = excerpt
+        self.link = link
+        
     }
     
     private let wpDateFormatter: DateFormatter = {

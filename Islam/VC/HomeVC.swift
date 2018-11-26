@@ -26,10 +26,9 @@ class HomeVC: UIViewController {
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
     var posts = Array<Post>()
-  //savedForLaterArray  var recentlyViewdPost = Array<Post>()
-    
-  
     var recentlyViewdInt = [Int]()
+  
+
     
     let articles = 35
     let fqa = 36
@@ -47,7 +46,7 @@ class HomeVC: UIViewController {
         
      
         getDataSavedPost()
-        //getDataRecentViewedPost()
+        getDataRecentViewedPost()
         fetchAllPosts()
         SideMenuManager.default.menuFadeStatusBar = false
     }
@@ -63,40 +62,41 @@ class HomeVC: UIViewController {
         return exists
     }
     
-//    func containRecentViewedPost(postId: Int) -> Bool {
-//        let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
-//            if post.id == postId {
-//                return true
-//            } else {
-//                return false
-//            }
-//        })
-//        return exists
-//    }
+    func containRecentViewedPost(postId: Int) -> Bool {
+        let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
+            if post.id == postId {
+                return true
+            } else {
+                return false
+            }
+        })
+        return exists
+    }
     
 //    func storeData(savedForLaterInt : [Int]){
-//        defaults?.set(recentlyViewdPost, forKey: "recentlyViewdPost")
+//        defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
 //    }
-//
-//
-//    func getDataRecentViewedPost(){
-//        let data = defaults?.value(forKey: "recentlyViewdPost") as? [Int]
-//        let posts = postsArticles + postsFqa
-//        if data != nil && posts != nil {
-//            for postId in data! {
-//                for post in posts {
-//                    if postId == post.id{
-//                        let exists = containRecentViewedPost(postId: postId)
-//                        if exists != true {
-//                            recentlyViewdPost.append(post)
-//                        }
-//                    }
-//                }
-//            }
-//        } else {
-//
-//        }
-//    }
+
+
+    func getDataRecentViewedPost(){
+        let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
+        print("recent viewed post \(data)")
+        let posts = postsArticles + postsFqa
+        if data != nil{
+            for postId in data! {
+                for post in posts {
+                    if postId == post.id{
+                        let exists = containRecentViewedPost(postId: postId)
+                        if exists != true {
+                            recentlyViewdPost.append(post)
+                        }
+                    }
+                }
+            }
+        } else {
+
+        }
+    }
     
     
     
@@ -143,8 +143,9 @@ class HomeVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getDataSavedPost()
+       getDataRecentViewedPost()
         tableView.reloadData()
-        print("This is the saved for later array : \(savedForLaterArray)")
+     //   print("This is the saved for later array : \(savedForLaterArray)")
         navigationSetUp()
         if isReload == false  { /// Try to check which type
             if postType == 2 &&  savedForLaterArray.count != 0 {
@@ -153,7 +154,7 @@ class HomeVC: UIViewController {
                 isReload = true
 
             }
-            if recentlyViewdPost.count != 0 {
+            if postType == 1 && recentlyViewdPost.count != 0 {
                 tableView.reloadData()
                 tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
                 isReload = true
@@ -255,7 +256,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
            var str = ""
         if showDescription == true  {
-         str = "You have no recently viewed posts"
+         str = "You have no posts"
         } else {
             showDescription = true 
             
@@ -319,14 +320,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
     
     
     func contain(post: Post) -> Bool{
-        
+
         for recentPost in recentlyViewdPost {
             if recentPost.id == post.id{
                 return true
             }
         }
         return false
-        
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -342,16 +343,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                 case fqa :
                     let selectedPost = postsFqa[indexPath.row]
               
-                    let postContain = contain(post: selectedPost)
 //                    if let index = recentlyViewdInt.index(of: selectedPost.id) {
-//                        recentlyViewdInt.remove(at: index)
-//                        savedForLaterArray.remove(at: index)
-//                        storeData(savedForLaterInt: recentlyViewdInt)
+////                        recentlyViewdInt.remove(at: index)
+////                        savedForLaterArray.remove(at: index)
+////                        storeData(savedForLaterInt: recentlyViewdInt)
 //                    } else {
-                       // recentlyViewdInt.insert(selectedPost.id, at: 0)
-     //                   storeData(savedForLaterInt: recentlyViewdInt)
-      //              }
+//                        recentlyViewdInt.insert(selectedPost.id, at: 0)
+//                        storeData(savedForLaterInt: recentlyViewdInt)
+//                    }
                     
+                    let postContain = contain(post: selectedPost)
                     if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
                     }
@@ -380,7 +381,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     }
                     
                 default:
-                    let selectedPost = postsArticles[indexPath.row]
+                      let selectedPost = postsArticles[indexPath.row]
+//                    if let index = recentlyViewdInt.index(of: selectedPost.id) {
+//
+//                    } else {
+//                        recentlyViewdInt.insert(selectedPost.id, at: 0)
+//                        storeData(savedForLaterInt: recentlyViewdInt)
+//                    }
                     let postContain = contain(post: selectedPost)
                       if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
@@ -392,9 +399,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
         }
         let SearchVC = segue.destination as? SearchVC
         SearchVC?.posts =  postsArticles + postsFqa
+       
         
         let PostVC = segue.destination as? PostVC
         PostVC?.posts =  postsArticles + postsFqa
+        PostVC?.recentlyViewdInt = self.recentlyViewdInt
         
         
     }

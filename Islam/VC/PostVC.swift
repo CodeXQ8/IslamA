@@ -23,6 +23,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
     var html : String = " "
     var postTitle  : String = " "
     var postId : Int = 0
+    var link : String = " "
     
     var containerHeight = CGFloat()
     var contentString = String()
@@ -39,6 +40,21 @@ class PostVC: UIViewController, WKNavigationDelegate {
             html = (post?.content)!
             postTitle = (post?.title)!
             postId = (post?.id)!
+            link = (post?.link)!
+//                                if let index = recentlyViewdInt.index(of: postId) {
+//
+//                                } else {
+//                                    recentlyViewdInt.append(postId)
+//
+//                                    //insert(postId, at: 0)
+//                                    storeData(savedForLaterInt: recentlyViewdInt)
+//                                }
+        }
+    }
+    
+    var recentlyViewdInt = [Int](){
+        didSet {
+            
         }
     }
     
@@ -49,8 +65,6 @@ class PostVC: UIViewController, WKNavigationDelegate {
         webKitSetUp()
     }
     
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         updateSaveImage()
@@ -59,7 +73,47 @@ class PostVC: UIViewController, WKNavigationDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         getData()
+        getDataRecentViewedPost()
     }
+    
+    
+        func containRecentViewedPost(postId: Int) -> Bool {
+            let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
+                if post.id == postId {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            return exists
+        }
+    
+        func storeData(savedForLaterInt : [Int]){
+            defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
+        }
+    
+    
+        func getDataRecentViewedPost(){
+            let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
+            print("recent viewed post \(data)")
+
+            if data != nil{
+                for postId in data! {
+                    for post in posts! {
+                        if postId == post.id{
+                            let exists = containRecentViewedPost(postId: postId)
+                            if exists != true {
+                                recentlyViewdPost.append(post)
+                            }
+                        }
+                    }
+                }
+            } else {
+    
+            }
+        }
+    
+
     
     func updateSaveImage(){
      if let index = savedPost.index(of: postId) {
@@ -160,6 +214,14 @@ class PostVC: UIViewController, WKNavigationDelegate {
         }
         
     }
+    
+    /// Get the Link from wordpress ///
+    @IBAction func shareBtnWasPressed(_ sender: Any) {
+        let activityVC = UIActivityViewController(activityItems:[ postTitle,"\n\(link)"], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC,animated: true, completion: nil)
+    }
+    
     
     
     
