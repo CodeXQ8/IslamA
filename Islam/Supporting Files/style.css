@@ -23,7 +23,7 @@
     h1 {
     font-family: "Andada Bold";
     margin-top: 25px;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 36px;
     background: #fff !important;
     color: #434343;
@@ -31,7 +31,7 @@
 
     h2 ,h3 ,h4 {
     font-family: "Andada Bold";
-    font-size: 26px;
+    font-size: 28px;
     line-height: 28px;
     margin-top: 25px;
     background: #fff !important;
@@ -47,7 +47,7 @@
     }
     body p {
     font-family: "Andada";
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     background: #fff !important;
     color: #7a7a7a;
@@ -58,13 +58,13 @@
         border-left: 5px solid #2C8587;
         margin: 1.5em 10px;
         line-height: 18px;
-        padding: 0.5em 10px;
+        padding: 0.5em 5px;
         page-break-inside: avoid;
     }
 
 blockquote p {
     font-family: "Andada";
-    font-size: 18px;
+    font-size: 16px;
     color: #7a7a7a;
 }
     h1, h2, h3, h4, h5, h6 {
@@ -82,7 +82,7 @@ blockquote p {
         font-family: "Andada";
         text-decoration: underline;
         text-decoration-color: black;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 18px;
         color: #000000;
     }
@@ -126,6 +126,7 @@ blockquote p {
     ul, ol {
         
         font-family: "Andada";
+        font-size: 16px;
         background: #fff !important;
         color: #7a7a7a;
         list-style: square; margin-left: 18pt;
@@ -135,6 +136,7 @@ blockquote p {
     li {
         list-style-type: circle;
         font-family: "Andada";
+         font-size: 16px;
         background: #fff !important;
         color: #7a7a7a;
         line-height: 1.6em;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcx-nb-EVf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcx-nb-EVf">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,14 +45,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-fI-Xxa">
-                                                    <rect key="frame" x="20" y="10" width="379" height="43.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Andada-Bold" family="Andada" pointSize="21"/>
+                                                    <rect key="frame" x="20" y="10" width="379" height="46"/>
+                                                    <fontDescription key="fontDescription" name="Andada-Bold" family="Andada" pointSize="19"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-84-AE5">
-                                                    <rect key="frame" x="20" y="58.333333333333336" width="379" height="21.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Andada-Regular" family="Andada" pointSize="16"/>
+                                                    <rect key="frame" x="20" y="60.999999999999993" width="379" height="18.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Andada-Regular" family="Andada" pointSize="14"/>
                                                     <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -81,7 +81,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QK-bs-718" customClass="DesignableButton" customModule="Islam_Explored" customModuleProvider="target">
                                 <rect key="frame" x="344" y="787" width="55" height="55"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.58431372550000005" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="1UI-Sx-LmU"/>
                                     <constraint firstAttribute="height" constant="55" id="fHJ-RO-kZ1"/>
@@ -114,7 +114,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Articles" id="g9U-49-Ef4">
                         <barButtonItem key="backBarButtonItem" title=" " id="B68-Ok-nwt"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu" style="plain" id="JKh-DR-Lir">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" style="plain" id="JKh-DR-Lir">
                             <connections>
                                 <segue destination="1Y4-T7-N8I" kind="presentation" id="f8Q-7f-MOU"/>
                             </connections>
@@ -160,14 +160,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-Fu-xyV">
-                                                    <rect key="frame" x="15" y="10" width="384" height="43.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Andada-Bold" family="Andada" pointSize="21"/>
+                                                    <rect key="frame" x="15" y="10" width="384" height="46"/>
+                                                    <fontDescription key="fontDescription" name="Andada-Bold" family="Andada" pointSize="19"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEe-I9-lyv">
-                                                    <rect key="frame" x="15" y="58.333333333333336" width="384" height="21.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Andada-Regular" family="Andada" pointSize="16"/>
+                                                    <rect key="frame" x="15" y="60.999999999999993" width="384" height="18.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Andada-Regular" family="Andada" pointSize="14"/>
                                                     <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -215,20 +215,20 @@
         <!-- -->
         <scene sceneID="T5h-Yg-dvZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Fyd-4I-J5y" customClass="PostVC" customModule="Islam_Explored" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Fyd-4I-J5y" customClass="PostVC" customModule="Islam_Explored" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DCm-Ld-T9D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uds-DK-8Cg">
-                                <rect key="frame" x="15" y="88" width="384" height="774"/>
+                                <rect key="frame" x="15" y="88" width="384" height="725"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLj-RN-ur1">
+                            <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLj-RN-ur1">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem width="363" style="plain" systemItem="fixedSpace" id="Z1u-5n-QUJ"/>
@@ -239,17 +239,18 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uds-DK-8Cg" firstAttribute="leading" secondItem="hZB-9b-m0A" secondAttribute="leading" constant="15" id="1bb-YM-1OZ"/>
                             <constraint firstItem="mLj-RN-ur1" firstAttribute="trailing" secondItem="hZB-9b-m0A" secondAttribute="trailing" id="Eak-Ka-rPc"/>
-                            <constraint firstItem="hZB-9b-m0A" firstAttribute="trailing" secondItem="uds-DK-8Cg" secondAttribute="trailing" constant="15" id="YHh-Kv-6yU"/>
-                            <constraint firstItem="uds-DK-8Cg" firstAttribute="leading" secondItem="hZB-9b-m0A" secondAttribute="leading" constant="15" id="Yuv-O2-b7V"/>
+                            <constraint firstItem="mLj-RN-ur1" firstAttribute="top" secondItem="uds-DK-8Cg" secondAttribute="bottom" id="OTe-ha-3BP"/>
+                            <constraint firstItem="hZB-9b-m0A" firstAttribute="trailing" secondItem="uds-DK-8Cg" secondAttribute="trailing" constant="15" id="YUu-rG-PkK"/>
+                            <constraint firstItem="uds-DK-8Cg" firstAttribute="top" secondItem="hZB-9b-m0A" secondAttribute="top" id="fUl-6B-tYd"/>
                             <constraint firstItem="mLj-RN-ur1" firstAttribute="bottom" secondItem="hZB-9b-m0A" secondAttribute="bottom" id="fqJ-na-PS0"/>
                             <constraint firstItem="mLj-RN-ur1" firstAttribute="leading" secondItem="hZB-9b-m0A" secondAttribute="leading" id="iYR-72-v0f"/>
-                            <constraint firstItem="uds-DK-8Cg" firstAttribute="bottom" secondItem="hZB-9b-m0A" secondAttribute="bottom" id="muN-CT-Nxn"/>
-                            <constraint firstItem="uds-DK-8Cg" firstAttribute="top" secondItem="hZB-9b-m0A" secondAttribute="top" id="zbV-I6-syW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hZB-9b-m0A"/>
                     </view>
@@ -263,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAG-bb-9Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276" y="870"/>
+            <point key="canvasLocation" x="5275.36231884058" y="869.86607142857144"/>
         </scene>
         <!--Home-->
         <scene sceneID="Q5r-P5-KFd">
@@ -277,7 +278,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.52156862745098043" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="21"/>
+                            <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -323,7 +324,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="SZV-HC-AMQ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="14"/>
                                                     <color key="textColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -345,7 +346,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-bE-pVt">
                                                     <rect key="frame" x="15" y="6" width="239" height="36.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="14"/>
                                                     <color key="textColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -367,7 +368,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved For Later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN7-Q8-axx">
                                                     <rect key="frame" x="15" y="6" width="239" height="36.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="14"/>
                                                     <color key="textColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -389,7 +390,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewd " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-Nn-fuH">
                                                     <rect key="frame" x="15" y="6" width="239" height="36.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="14"/>
                                                     <color key="textColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -430,7 +431,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
-                            <real key="value" value="310"/>
+                            <real key="value" value="280"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>

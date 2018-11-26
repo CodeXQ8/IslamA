@@ -48,7 +48,6 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
     
     
     func updateSearchResults(for searchController: UISearchController) {
-      print("1")
     }
     
     func search(searchText : String  ) {
@@ -132,6 +131,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             
             let postVC = segue.destination as? PostVC
             postVC?.post = selectedPost
+            postVC?.posts =  self.posts
         }
         
         

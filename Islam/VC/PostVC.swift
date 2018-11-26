@@ -10,12 +10,15 @@ import UIKit
 import WebKit
 
 let defaults = UserDefaults(suiteName: "Islam.Explored")
+var savedForLaterArray = Array<Post>()
 
 class PostVC: UIViewController, WKNavigationDelegate {
     
     
     @IBOutlet weak var WKView: WKWebView!
     @IBOutlet weak var postContent: UITextView!
+    
+
     
     var html : String = " "
     var postTitle  : String = " "
@@ -42,6 +45,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        updateSaveImage()
         webKitSetUp()
     }
     
@@ -67,7 +71,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-      //  storeData(savedPost: <#[Int]#>)
+        getData()
     }
 
     func webKitSetUp(){
@@ -86,11 +90,52 @@ class PostVC: UIViewController, WKNavigationDelegate {
         defaults?.set(savedPost, forKey: "savedPost")
     }
     
+    
+    func containPostId(postId: Int) -> Bool {
+        let exists = savedForLaterArray.contains(where: { (post) -> Bool in
+            if post.id == postId {
+                return true
+            } else {
+                return false
+            }
+        })
+        return exists
+    }
+    
+    
+//let data = defaults?.value(forKey: "savedPost") as? [Int]
+    //        if data != nil {
+    //            for postId in data! {
+    //            for post in allPosts {
+    //                if postId == post.id{
+    //                    let exists = containPostId(postId: postId)
+    //                    if exists != true {
+    //                            savedForLaterArray.append(post)
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    
     func getData(){
-        let data = defaults?.value(forKey: "savedPost")
-        if data != nil {
+        let data = defaults?.value(forKey: "savedPost") as? [Int]
+      
+        if data != nil{
             self.savedPost = data as! [Int]
-        } else {
+            if posts != nil  {
+            for postId in data! {
+                            for post in posts! {
+                                if postId == post.id{
+                                    let exists = containPostId(postId: postId)
+                                    if exists != true {
+                                            savedForLaterArray.insert(post, at: 0)
+                                    }
+                                }
+                            }
+                        }
+            }
+        }
+        else {
             
         }
     }
@@ -101,12 +146,13 @@ class PostVC: UIViewController, WKNavigationDelegate {
         
         if let index = savedPost.index(of: postId) {
             savedPost.remove(at: index)
+            savedForLaterArray.remove(at: index)
             print(savedPost)
             storeData(savedPost: savedPost)
 //            print(UserDefaults.standard.array(forKey: "savedPost"))
             savedBtn.image = UIImage(named: "bookmark")
         } else {
-            savedPost.append(postId)
+            savedPost.insert(postId, at: 0)
             print(savedPost)
             storeData(savedPost: savedPost)
 //            print(UserDefaults.standard.array(forKey: "savedPost"))

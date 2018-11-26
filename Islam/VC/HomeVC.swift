@@ -13,7 +13,7 @@ import EmptyDataSet_Swift
 var postType = 0
 var isReload = true
 var recentlyViewdPost = Array<Post>()
-var savedForLaterArray = Array<Post>()
+
 
 class HomeVC: UIViewController {
     
@@ -25,8 +25,11 @@ class HomeVC: UIViewController {
 
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
-    var allPosts = Array<Post>()
-   
+    var posts = Array<Post>()
+  //savedForLaterArray  var recentlyViewdPost = Array<Post>()
+    
+  
+    var recentlyViewdInt = [Int]()
     
     let articles = 35
     let fqa = 36
@@ -43,58 +46,121 @@ class HomeVC: UIViewController {
         tableView.emptyDataSetDelegate = self
         
      
-        
+        getDataSavedPost()
+        //getDataRecentViewedPost()
         fetchAllPosts()
         SideMenuManager.default.menuFadeStatusBar = false
     }
     
-
-    
-    
     func containPostId(postId: Int) -> Bool {
-         let exists = savedForLaterArray.contains(where: { (post) -> Bool in
+        let exists = savedForLaterArray.contains(where: { (post) -> Bool in
             if post.id == postId {
                 return true
             } else {
-            return false
+                return false
             }
         })
         return exists
     }
     
+//    func containRecentViewedPost(postId: Int) -> Bool {
+//        let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
+//            if post.id == postId {
+//                return true
+//            } else {
+//                return false
+//            }
+//        })
+//        return exists
+//    }
     
-    func getData(){
-        allPosts = postsArticles + postsFqa
-        
+//    func storeData(savedForLaterInt : [Int]){
+//        defaults?.set(recentlyViewdPost, forKey: "recentlyViewdPost")
+//    }
+//
+//
+//    func getDataRecentViewedPost(){
+//        let data = defaults?.value(forKey: "recentlyViewdPost") as? [Int]
+//        let posts = postsArticles + postsFqa
+//        if data != nil && posts != nil {
+//            for postId in data! {
+//                for post in posts {
+//                    if postId == post.id{
+//                        let exists = containRecentViewedPost(postId: postId)
+//                        if exists != true {
+//                            recentlyViewdPost.append(post)
+//                        }
+//                    }
+//                }
+//            }
+//        } else {
+//
+//        }
+//    }
+    
+    
+    
+    func getDataSavedPost(){
         let data = defaults?.value(forKey: "savedPost") as? [Int]
-        if data != nil {
+        let posts = postsArticles + postsFqa
+        if data != nil && posts != nil {
             for postId in data! {
-            for post in allPosts {
-                if postId == post.id{
-                    let exists = containPostId(postId: postId)
-                    if exists != true {
+                for post in posts {
+                    if postId == post.id{
+                        let exists = containPostId(postId: postId)
+                        if exists != true {
                             savedForLaterArray.append(post)
+                        }
                     }
                 }
             }
+        } else {
+            
         }
     }
-    }
+
+    
+//    func getData(){
+//    //    allPosts = postsArticles + postsFqa
+////
+////        let data = defaults?.value(forKey: "savedPost") as? [Int]
+////        if data != nil {
+////            for postId in data! {
+////            for post in allPosts {
+////                if postId == post.id{
+////                    let exists = containPostId(postId: postId)
+////                    if exists != true {
+////                            savedForLaterArray.append(post)
+////                    }
+////                }
+////            }
+////        }
+////    }
+//    }
     
 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getData()
+        getDataSavedPost()
+        tableView.reloadData()
         print("This is the saved for later array : \(savedForLaterArray)")
         navigationSetUp()
         if isReload == false  { /// Try to check which type
-        tableView.reloadData()
-            if recentlyViewdPost.count != 0 &&  savedForLaterArray.count != 0 {
+            if postType == 2 &&  savedForLaterArray.count != 0 {
+                tableView.reloadData()
                 tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+                isReload = true
+
             }
-        isReload = true
-        }
+            if recentlyViewdPost.count != 0 {
+                tableView.reloadData()
+                tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+                isReload = true
+            }
+            }
+        
+        
     }
 
     
@@ -277,10 +343,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     let selectedPost = postsFqa[indexPath.row]
               
                     let postContain = contain(post: selectedPost)
+//                    if let index = recentlyViewdInt.index(of: selectedPost.id) {
+//                        recentlyViewdInt.remove(at: index)
+//                        savedForLaterArray.remove(at: index)
+//                        storeData(savedForLaterInt: recentlyViewdInt)
+//                    } else {
+                       // recentlyViewdInt.insert(selectedPost.id, at: 0)
+     //                   storeData(savedForLaterInt: recentlyViewdInt)
+      //              }
+                    
                     if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
                     }
-                        
+                    
                     
                     let postVC = segue.destination as? PostVC
                     postVC?.post = selectedPost
