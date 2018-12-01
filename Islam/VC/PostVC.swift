@@ -52,11 +52,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
         }
     }
     
-    var recentlyViewdInt = [Int](){
-        didSet {
-            
-        }
-    }
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,45 +69,45 @@ class PostVC: UIViewController, WKNavigationDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         getData()
-        getDataRecentViewedPost()
+    //    getDataRecentViewedPost()
     }
     
     
-        func containRecentViewedPost(postId: Int) -> Bool {
-            let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
-                if post.id == postId {
-                    return true
-                } else {
-                    return false
-                }
-            })
-            return exists
-        }
-    
-        func storeData(savedForLaterInt : [Int]){
-            defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
-        }
-    
-    
-        func getDataRecentViewedPost(){
-            let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
-            print("recent viewed post \(data)")
-
-            if data != nil{
-                for postId in data! {
-                    for post in posts! {
-                        if postId == post.id{
-                            let exists = containRecentViewedPost(postId: postId)
-                            if exists != true {
-                                recentlyViewdPost.append(post)
-                            }
-                        }
-                    }
-                }
-            } else {
-    
-            }
-        }
+//        func containRecentViewedPost(postId: Int) -> Bool {
+//            let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
+//                if post.id == postId {
+//                    return true
+//                } else {
+//                    return false
+//                }
+//            })
+//            return exists
+//        }
+//
+//        func storeData(savedForLaterInt : [Int]){
+//            defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
+//        }
+//
+//
+//        func getDataRecentViewedPost(){
+//            let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
+//            print("recent viewed post \(data)")
+//
+//            if data != nil{
+//                for postId in data! {
+//                    for post in posts! {
+//                        if postId == post.id{
+//                            let exists = containRecentViewedPost(postId: postId)
+//                            if exists != true {
+//                                recentlyViewdPost.append(post)
+//                            }
+//                        }
+//                    }
+//                }
+//            } else {
+//
+//            }
+//        }
     
 
     

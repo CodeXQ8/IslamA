@@ -25,6 +25,12 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchControllerDelegat
         }
     }
     
+//    var recentlyViewdInt = [Int](){
+//        didSet {
+//            
+//        }
+//    }
+    
     var searchController : UISearchController!
 
     
@@ -180,11 +186,13 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
 //  //              HomeVC().storeData(savedForLaterInt: recentlyViewdInt)
 //            }
             
-//            let postContain = contain(post: selectedPost)
-//            if postContain == false {
-//                recentlyViewdPost.insert(selectedPost, at: 0)
-//                isReload = false
-//            }
+            let postContain = contain(post: selectedPost)
+            if postContain == false {
+                recentlyViewdPost.insert(selectedPost, at: 0)
+                recentlyViewdInt.insert(selectedPost.id, at: 0)
+               HomeVC().storeData(savedForLaterInt: recentlyViewdInt)
+                isReload = false
+            }
             
             let postVC = segue.destination as? PostVC
             postVC?.post = selectedPost

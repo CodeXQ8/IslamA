@@ -13,7 +13,7 @@ import EmptyDataSet_Swift
 var postType = 0
 var isReload = true
 var recentlyViewdPost = Array<Post>()
-
+var recentlyViewdInt = [Int]()
 
 class HomeVC: UIViewController {
     
@@ -26,7 +26,7 @@ class HomeVC: UIViewController {
     var postsArticles = Array<Post>()
     var postsFqa = Array<Post>()
     var posts = Array<Post>()
-    var recentlyViewdInt = [Int]()
+   // var recentlyViewdInt = [Int]()
   
 
     
@@ -51,6 +51,12 @@ class HomeVC: UIViewController {
         SideMenuManager.default.menuFadeStatusBar = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        storeData(savedForLaterInt: recentlyViewdInt)
+        getDataRecentViewedPost()
+    }
+    
     func containPostId(postId: Int) -> Bool {
         let exists = savedForLaterArray.contains(where: { (post) -> Bool in
             if post.id == postId {
@@ -61,7 +67,7 @@ class HomeVC: UIViewController {
         })
         return exists
     }
-    
+
     func containRecentViewedPost(postId: Int) -> Bool {
         let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
             if post.id == postId {
@@ -72,10 +78,10 @@ class HomeVC: UIViewController {
         })
         return exists
     }
-    
-//    func storeData(savedForLaterInt : [Int]){
-//        defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
-//    }
+
+    func storeData(savedForLaterInt : [Int]){
+        defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
+    }
 
 
     func getDataRecentViewedPost(){
@@ -97,7 +103,7 @@ class HomeVC: UIViewController {
 
         }
     }
-    
+
     
     
     func getDataSavedPost(){
@@ -355,6 +361,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     let postContain = contain(post: selectedPost)
                     if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
+                        recentlyViewdInt.insert(selectedPost.id, at: 0)
+                        storeData(savedForLaterInt: recentlyViewdInt)
                     }
                     
                     
@@ -391,6 +399,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                     let postContain = contain(post: selectedPost)
                       if postContain == false {
                         recentlyViewdPost.insert(selectedPost, at: 0)
+                        recentlyViewdInt.insert(selectedPost.id, at: 0)
+                        storeData(savedForLaterInt: recentlyViewdInt)
                     }
                     let postVC = segue.destination as? PostVC
                     postVC?.post = selectedPost
@@ -399,11 +409,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
         }
         let SearchVC = segue.destination as? SearchVC
         SearchVC?.posts =  postsArticles + postsFqa
-       
+       // SearchVC?.recentlyViewdInt = recentlyViewdInt
         
         let PostVC = segue.destination as? PostVC
         PostVC?.posts =  postsArticles + postsFqa
-        PostVC?.recentlyViewdInt = self.recentlyViewdInt
+        
         
         
     }
