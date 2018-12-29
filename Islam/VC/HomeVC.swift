@@ -324,18 +324,18 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
              let post = postsFqa[indexPath.row]
              let title = String(htmlEncodedString:post.title)
              let contentLbl = String(htmlEncodedString:post.excerpt)
-             cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
+             cell.updateCell(title: title,contentLbl: contentLbl)
         case recentlyViewd :
             let post = recentlyViewdPost[indexPath.row]
             let title = String(htmlEncodedString:post.title)
             let contentLbl = String(htmlEncodedString:post.excerpt)
-            cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
+            cell.updateCell(title: title,contentLbl: contentLbl)
         case savedForLater :
             let post = savedForLaterArray[indexPath.row]
             let title = String(htmlEncodedString:post.title)
             let contentLbl = String(htmlEncodedString:post.excerpt)
-            cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
-            
+            cell.updateCell(title: title,contentLbl: contentLbl)
+
         default:
             if indexPath.row == 0
             {
@@ -343,13 +343,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
                 let title = String(htmlEncodedString:post.title)
                 let contentLbl = String(htmlEncodedString:post.excerpt)
                 
-                cell.updateCell(title: title,contentLbl: contentLbl, ImageView: "image")
+                cell.updateCell(title: title,contentLbl: contentLbl)
             } else {
         
              let post = postsArticles[indexPath.row]
              let title = String(htmlEncodedString:post.title)
              let contentLbl = String(htmlEncodedString:post.excerpt)
-                cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
+             cell.updateCell(title: title,contentLbl: contentLbl)
             }
         }
            return cell

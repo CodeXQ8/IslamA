@@ -16,17 +16,10 @@ class CellPost: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var contentLbl: UILabel!
 
-    @IBOutlet weak var imageViewCell: UIImageView!
     
-    func updateCell(title : String, contentLbl: String,ImageView: String?){
+    func updateCell(title : String, contentLbl: String){
         self.titleLbl.text = title
         self.contentLbl.text = contentLbl
-        if ImageView != nil {
-        self.imageViewCell.image = UIImage(named: ImageView! )
-        } else {
-            
-            print("no image")
-        }
     }
     
 

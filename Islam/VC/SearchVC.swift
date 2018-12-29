@@ -153,7 +153,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         let post = currentPosts?[indexPath.row]
         let title = String(htmlEncodedString:(post?.title)!)
         let contentLbl =  String(htmlEncodedString:(post?.excerpt)!)
-        cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
+        cell.updateCell(title: title,contentLbl: contentLbl)
         return cell
     }
     
