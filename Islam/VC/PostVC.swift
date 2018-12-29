@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+
+
 let defaults = UserDefaults(suiteName: "Islam.Explored")
 var savedForLaterArray = Array<Post>()
 
@@ -30,6 +32,8 @@ class PostVC: UIViewController, WKNavigationDelegate {
     var index : Int = 0
     var isSaved = Bool ()
     
+    var isDark : Bool = false
+    
     var savedPost = [Int]()
     var saved : Bool = false
 
@@ -41,14 +45,6 @@ class PostVC: UIViewController, WKNavigationDelegate {
             postTitle = (post?.title)!
             postId = (post?.id)!
             link = (post?.link)!
-//                                if let index = recentlyViewdInt.index(of: postId) {
-//
-//                                } else {
-//                                    recentlyViewdInt.append(postId)
-//
-//                                    //insert(postId, at: 0)
-//                                    storeData(savedForLaterInt: recentlyViewdInt)
-//                                }
         }
     }
     
@@ -56,6 +52,11 @@ class PostVC: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  view.mixedBackgroundColor = MixedColor(normal: 0xfafafa, night: 0x222222)
+
+
+        
         getData()
         updateSaveImage()
         webKitSetUp()
@@ -69,47 +70,45 @@ class PostVC: UIViewController, WKNavigationDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         getData()
-    //    getDataRecentViewedPost()
     }
     
     
-//        func containRecentViewedPost(postId: Int) -> Bool {
-//            let exists = recentlyViewdPost.contains(where: { (post) -> Bool in
-//                if post.id == postId {
-//                    return true
-//                } else {
-//                    return false
-//                }
-//            })
-//            return exists
-//        }
-//
-//        func storeData(savedForLaterInt : [Int]){
-//            defaults?.set(savedForLaterInt, forKey: "savedForLaterInt")
-//        }
-//
-//
-//        func getDataRecentViewedPost(){
-//            let data = defaults?.value(forKey: "savedForLaterInt") as? [Int]
-//            print("recent viewed post \(data)")
-//
-//            if data != nil{
-//                for postId in data! {
-//                    for post in posts! {
-//                        if postId == post.id{
-//                            let exists = containRecentViewedPost(postId: postId)
-//                            if exists != true {
-//                                recentlyViewdPost.append(post)
-//                            }
-//                        }
-//                    }
-//                }
-//            } else {
-//
-//            }
-//        }
+    @IBOutlet weak var nightModeBtn: UIBarButtonItem!
     
-
+//    @IBAction func nightModeBtnWasPressed(_ sender: Any) {
+//
+//        navigationController?.navigationBar.mixedBarTintColor = MixedColor(normal: 0x2C8587, night: 0x222222)
+//        navigationController?.navigationBar.mixedTintColor = MixedColor(normal: 0xffffff, night: 0xfafafa)
+//        navigationController?.navigationBar.mixedBarStyle = MixedBarStyle(normal: .default, night: .black)
+//
+//
+//       changeTheme()
+//
+//    }
+    
+    
+//     func changeToNormal() {
+//        NightNight.theme = .normal
+//    }
+//    
+//     func changeToNight() {
+//        NightNight.theme = .night
+//    }
+//    
+//     func changeTheme() {
+//        if NightNight.theme == .night {
+//            NightNight.theme = .normal
+//        } else {
+//            NightNight.theme = .night
+//        }
+//    }
+//    
+//    override var preferredStatusBarStyle : UIStatusBarStyle {
+//        return MixedStatusBarStyle(normal: .default, night: .lightContent).unfold()
+//        
+//    }
+    
+    
     
     func updateSaveImage(){
      if let index = savedPost.index(of: postId) {
@@ -151,22 +150,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
         })
         return exists
     }
-    
-    
-//let data = defaults?.value(forKey: "savedPost") as? [Int]
-    //        if data != nil {
-    //            for postId in data! {
-    //            for post in allPosts {
-    //                if postId == post.id{
-    //                    let exists = containPostId(postId: postId)
-    //                    if exists != true {
-    //                            savedForLaterArray.append(post)
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    
+
     func getData(){
         let data = defaults?.value(forKey: "savedPost") as? [Int]
       
@@ -189,7 +173,7 @@ class PostVC: UIViewController, WKNavigationDelegate {
             
         }
     }
-//    [1403, 1173, 1632, 1475, 2637, 1493]
+
     @IBOutlet weak var savedBtn: UIBarButtonItem!
     @IBAction func SaveBtnWasPressed(_ sender: Any) {
         
@@ -199,13 +183,11 @@ class PostVC: UIViewController, WKNavigationDelegate {
             savedForLaterArray.remove(at: index)
             print(savedPost)
             storeData(savedPost: savedPost)
-//            print(UserDefaults.standard.array(forKey: "savedPost"))
             savedBtn.image = UIImage(named: "bookmark")
         } else {
             savedPost.insert(postId, at: 0)
             print(savedPost)
             storeData(savedPost: savedPost)
-//            print(UserDefaults.standard.array(forKey: "savedPost"))
             savedBtn.image = UIImage(named: "bookmark-fill")
         }
         

@@ -1,35 +1,34 @@
 //
-//  cellPost.swift
-//  Islam
+//  IntroCell.swift
+//  Islam Explored
 //
-//  Created by Nayef Alotaibi on 9/2/18.
-//  Copyright © 2018 Nayef Alotaibi. All rights reserved.
+//  Created by Nayef Alotaibi on 12/14/18.
+//  Copyright © 2018 Islam. All rights reserved.
 //
-
 
 import UIKit
 
-@IBDesignable
-class CellPost: UITableViewCell {
+class IntroCell: UICollectionViewCell {
     
-
+    
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var contentLbl: UILabel!
-
-    @IBOutlet weak var imageViewCell: UIImageView!
+  
+    @IBOutlet weak var exceprtLbl: UILabel!
     
-    func updateCell(title : String, contentLbl: String,ImageView: String?){
-        self.titleLbl.text = title
-        self.contentLbl.text = contentLbl
-        if ImageView != nil {
-        self.imageViewCell.image = UIImage(named: ImageView! )
-        } else {
-            
-            print("no image")
-        }
+    
+    func updateCell(titleLbl: String?, exceprtLbl : String?){
+        
+        self.titleLbl.text = "What is Islam?"
+        self.exceprtLbl.text = "Islam is the name of the religion, or more properly the ‘way of life’, which God has revealed and which was practiced by all of the Prophets and Messengers of God that He sent to mankind including Moses and Jesus.  Even the name Islam stands out unique among other religions in that it means a state of being."
+        
     }
     
-
+    
+    func updateLayout(){
+        
+    }
+    
+    
     @IBInspectable var cornerRaduis : CGFloat = 0.0 {
         
         didSet {
@@ -64,4 +63,9 @@ class CellPost: UITableViewCell {
             self.layer.borderColor = UIColor.lightGray.cgColor     }
     }
     
+    
+
+
+
+
 }

@@ -17,7 +17,7 @@ var recentlyViewdInt = [Int]()
 
 class HomeVC: UIViewController {
     
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var childVC: UIView!
@@ -40,9 +40,11 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
+//  
+//        tableView.emptyDataSetSource = self
+//        tableView.emptyDataSetDelegate = self
+//        collectionView.emptyDataSetSource = self
+//        collectionView.emptyDataSetDelegate = self
         
      
         getDataSavedPost()
@@ -251,7 +253,22 @@ class HomeVC: UIViewController {
 }
 
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSource, EmptyDataSetDelegate{
+//extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroCell", for: indexPath) as? IntroCell else { return IntroCell() }
+//        cell.updateCell(titleLbl: nil, exceprtLbl: nil)
+//        return cell
+//    }
+//}
+
+extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSource, EmptyDataSetDelegate {
+ 
+    
     
 //    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
 //        let str = "You have no recently viewed posts"
@@ -261,11 +278,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
            var str = ""
-        if showDescription == true  {
+            var i = 0
+        if showDescription == true && i == 2  {
          str = "You have no posts"
         } else {
             showDescription = true 
-            
+            i = i + 1
         }
         return NSAttributedString(string: str)
     }
@@ -277,6 +295,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         switch postType
         {
         case fqa :
@@ -289,39 +308,51 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource , EmptyDataSetSourc
             return savedForLaterArray.count
             
         default:
-        return postsArticles.count
-        }
+                return postsArticles.count
+            }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellPost", for: indexPath) as? CellPost else { return CellPost() }
+       
 
+ 
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellPost", for: indexPath) as? CellPost else { return CellPost() }
         switch postType
         {
         case fqa :
              let post = postsFqa[indexPath.row]
              let title = String(htmlEncodedString:post.title)
              let contentLbl = String(htmlEncodedString:post.excerpt)
-             cell.updateCell(title: title,contentLbl: contentLbl)
+             cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
         case recentlyViewd :
             let post = recentlyViewdPost[indexPath.row]
             let title = String(htmlEncodedString:post.title)
             let contentLbl = String(htmlEncodedString:post.excerpt)
-            cell.updateCell(title: title,contentLbl: contentLbl)
+            cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
         case savedForLater :
             let post = savedForLaterArray[indexPath.row]
             let title = String(htmlEncodedString:post.title)
             let contentLbl = String(htmlEncodedString:post.excerpt)
-            cell.updateCell(title: title,contentLbl: contentLbl)
+            cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
             
         default:
+            if indexPath.row == 0
+            {
+                let post = postsArticles[indexPath.row]
+                let title = String(htmlEncodedString:post.title)
+                let contentLbl = String(htmlEncodedString:post.excerpt)
+                
+                cell.updateCell(title: title,contentLbl: contentLbl, ImageView: "image")
+            } else {
+        
              let post = postsArticles[indexPath.row]
              let title = String(htmlEncodedString:post.title)
              let contentLbl = String(htmlEncodedString:post.excerpt)
-             cell.updateCell(title: title,contentLbl: contentLbl)
+                cell.updateCell(title: title,contentLbl: contentLbl, ImageView: nil)
+            }
         }
-            return cell
-        
+           return cell
     }
     
     

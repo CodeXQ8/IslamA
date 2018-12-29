@@ -30,46 +30,61 @@
                             </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fej-A5-IZv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="PZn-Yw-xYI" userLabel="Footer">
-                                    <rect key="frame" x="0.0" y="128" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="278" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellPost" rowHeight="100" id="Jb0-ga-aOM" customClass="CellPost" customModule="Islam_Explored" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellPost" rowHeight="250" id="Jb0-ga-aOM" customClass="CellPost" customModule="Islam_Explored" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jb0-ga-aOM" id="BHs-pG-frR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-fI-Xxa">
-                                                    <rect key="frame" x="20" y="10" width="379" height="46"/>
+                                                    <rect key="frame" x="20" y="140" width="379" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="olr-FS-8ME"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Andada-Bold" family="Andada" pointSize="19"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-84-AE5">
-                                                    <rect key="frame" x="20" y="60.999999999999993" width="379" height="18.666666666666664"/>
+                                                    <rect key="frame" x="20" y="191" width="379" height="38.666666666666657"/>
                                                     <fontDescription key="fontDescription" name="Andada-Regular" family="Andada" pointSize="14"/>
                                                     <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="exP-lo-2pW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="130" id="dAJ-WU-I0Q"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="MRB-84-AE5" firstAttribute="top" secondItem="zSR-fI-Xxa" secondAttribute="bottom" constant="5" id="66j-iL-JNK"/>
-                                                <constraint firstItem="zSR-fI-Xxa" firstAttribute="top" secondItem="BHs-pG-frR" secondAttribute="top" constant="10" id="7uh-ey-S4L"/>
+                                                <constraint firstItem="zSR-fI-Xxa" firstAttribute="top" secondItem="exP-lo-2pW" secondAttribute="bottom" constant="10" id="ERf-Gr-1wZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="zSR-fI-Xxa" secondAttribute="trailing" constant="15" id="GMN-Hn-y9Y"/>
+                                                <constraint firstItem="exP-lo-2pW" firstAttribute="top" secondItem="BHs-pG-frR" secondAttribute="top" id="Lz6-k9-Yvl"/>
                                                 <constraint firstItem="zSR-fI-Xxa" firstAttribute="leading" secondItem="BHs-pG-frR" secondAttribute="leading" constant="20" id="aXo-vj-ucY"/>
+                                                <constraint firstItem="exP-lo-2pW" firstAttribute="leading" secondItem="BHs-pG-frR" secondAttribute="leading" id="mEA-ny-t70"/>
                                                 <constraint firstAttribute="trailing" secondItem="MRB-84-AE5" secondAttribute="trailing" constant="15" id="mOQ-Na-XfR"/>
                                                 <constraint firstAttribute="bottom" secondItem="MRB-84-AE5" secondAttribute="bottom" constant="20" id="nj8-eY-vLM"/>
+                                                <constraint firstAttribute="trailing" secondItem="exP-lo-2pW" secondAttribute="trailing" id="oTG-Na-5Ec"/>
                                                 <constraint firstItem="MRB-84-AE5" firstAttribute="leading" secondItem="BHs-pG-frR" secondAttribute="leading" constant="20" id="wPz-aS-byk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="contentLbl" destination="MRB-84-AE5" id="zlK-i5-d8f"/>
+                                            <outlet property="imageViewCell" destination="exP-lo-2pW" id="b4s-D3-4vM"/>
                                             <outlet property="titleLbl" destination="zSR-fI-Xxa" id="KPW-K8-6bB"/>
                                         </connections>
                                     </tableViewCell>
@@ -222,7 +237,7 @@
                         <subviews>
                             <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uds-DK-8Cg">
                                 <rect key="frame" x="15" y="88" width="384" height="724"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -234,7 +249,7 @@
                                     <barButtonItem width="334" style="plain" systemItem="fixedSpace" id="adB-bY-4YH"/>
                                     <barButtonItem id="qjm-K6-JAe">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mvp-yv-mpZ">
-                                            <rect key="frame" x="309" y="10" width="30" height="30"/>
+                                            <rect key="frame" x="273" y="10" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="share-rounded"/>
                                             <connections>
@@ -242,6 +257,12 @@
                                             </connections>
                                         </button>
                                         <color key="tintColor" red="0.19215686269999999" green="0.58431372550000005" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem image="icons8-night-26" id="66I-Jo-WwE">
+                                        <color key="tintColor" red="0.19215686269999999" green="0.58431372550000005" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="nightModeBtnWasPressed:" destination="Fyd-4I-J5y" id="mn9-Sq-yxc"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem width="8" style="plain" systemItem="fixedSpace" id="aCv-a2-4Ex"/>
                                     <barButtonItem image="icons8-bookmark-50" id="QEq-sv-tGt">
@@ -271,6 +292,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="WKView" destination="uds-DK-8Cg" id="6HA-8q-pF4"/>
+                        <outlet property="nightModeBtn" destination="66I-Jo-WwE" id="VwA-oM-Qfd"/>
                         <outlet property="savedBtn" destination="QEq-sv-tGt" id="Chc-uG-qc6"/>
                     </connections>
                 </viewController>
@@ -420,37 +442,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hLp-8h-iXk">
-                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hLp-8h-iXk" id="l2k-ev-gSS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewd " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-Nn-fuH">
-                                                    <rect key="frame" x="50" y="6" width="204" height="36.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="14"/>
-                                                    <color key="textColor" red="0.17254901959999999" green="0.52156862749999999" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time-machine" translatesAutoresizingMaskIntoConstraints="NO" id="txz-PO-mhC">
-                                                    <rect key="frame" x="15" y="11" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="IQP-aU-W6I"/>
-                                                        <constraint firstAttribute="height" constant="25" id="ePX-Zs-Qfk"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="txz-PO-mhC" firstAttribute="top" secondItem="l2k-ev-gSS" secondAttribute="top" constant="11" id="7TF-2I-Pdx"/>
-                                                <constraint firstItem="lMu-Nn-fuH" firstAttribute="leading" secondItem="txz-PO-mhC" secondAttribute="trailing" constant="10" id="BnE-Nq-edz"/>
-                                                <constraint firstAttribute="trailing" secondItem="lMu-Nn-fuH" secondAttribute="trailing" constant="160" id="DCw-Sp-q8o"/>
-                                                <constraint firstItem="txz-PO-mhC" firstAttribute="leading" secondItem="l2k-ev-gSS" secondAttribute="leading" constant="15" id="H6f-47-wE9"/>
-                                                <constraint firstItem="lMu-Nn-fuH" firstAttribute="top" secondItem="l2k-ev-gSS" secondAttribute="top" constant="6" id="XqX-FG-he9"/>
-                                                <constraint firstAttribute="bottom" secondItem="lMu-Nn-fuH" secondAttribute="bottom" constant="7.6699999999999999" id="Zfu-v4-M0l"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -496,12 +487,13 @@
         <image name="home-page" width="16" height="16"/>
         <image name="icons8-bookmark-50" width="50" height="50"/>
         <image name="icons8-bookmark-filled-50" width="50" height="50"/>
+        <image name="icons8-night-26" width="26" height="26"/>
         <image name="icons8-read-30" width="30" height="30"/>
+        <image name="image" width="2867" height="1590"/>
         <image name="menu" width="24" height="24"/>
         <image name="questions" width="26" height="26"/>
         <image name="search" width="24" height="24"/>
         <image name="share-rounded" width="30" height="30"/>
-        <image name="time-machine" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZvB-TO-Iya"/>

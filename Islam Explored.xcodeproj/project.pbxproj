@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		A775A69854C11C25FE07C96D /* Pods_Islam_Explored.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D071FAA52A88ED6F7C1B9F5 /* Pods_Islam_Explored.framework */; };
+		BE01A91E21B2488A00E9D2A0 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = BE01A8FD21B2488A00E9D2A0 /* .gitkeep */; };
+		BE01A91F21B2488A00E9D2A0 /* AttributeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A8FE21B2488A00E9D2A0 /* AttributeNames.swift */; };
+		BE01A92021B2488A00E9D2A0 /* CALayer+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A8FF21B2488A00E9D2A0 /* CALayer+Mixed.swift */; };
+		BE01A92121B2488A00E9D2A0 /* Dictionary+AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90021B2488A00E9D2A0 /* Dictionary+AttributedStringKeys.swift */; };
+		BE01A92221B2488A00E9D2A0 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90121B2488A00E9D2A0 /* Keys.swift */; };
+		BE01A92321B2488A00E9D2A0 /* MixedResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90221B2488A00E9D2A0 /* MixedResource.swift */; };
+		BE01A92421B2488A00E9D2A0 /* NightNight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90321B2488A00E9D2A0 /* NightNight.swift */; };
+		BE01A92521B2488A00E9D2A0 /* NNMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90421B2488A00E9D2A0 /* NNMutableAttributedString.swift */; };
+		BE01A92621B2488A00E9D2A0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90521B2488A00E9D2A0 /* NotificationManager.swift */; };
+		BE01A92721B2488A00E9D2A0 /* NSObject+Customize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90621B2488A00E9D2A0 /* NSObject+Customize.swift */; };
+		BE01A92821B2488A00E9D2A0 /* NSObject+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90721B2488A00E9D2A0 /* NSObject+Mixed.swift */; };
+		BE01A92921B2488A00E9D2A0 /* UIButton+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90821B2488A00E9D2A0 /* UIButton+Mixed.swift */; };
+		BE01A92A21B2488A00E9D2A0 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90921B2488A00E9D2A0 /* UIColor+RGB.swift */; };
+		BE01A92B21B2488A00E9D2A0 /* UIImageView+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90A21B2488A00E9D2A0 /* UIImageView+Mixed.swift */; };
+		BE01A92C21B2488A00E9D2A0 /* UIBarButtonItem+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90C21B2488A00E9D2A0 /* UIBarButtonItem+Mixed.swift */; };
+		BE01A92D21B2488A00E9D2A0 /* UILabel+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90D21B2488A00E9D2A0 /* UILabel+Mixed.swift */; };
+		BE01A92E21B2488A00E9D2A0 /* UINavigationBar+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90E21B2488A00E9D2A0 /* UINavigationBar+Mixed.swift */; };
+		BE01A92F21B2488A00E9D2A0 /* UIPageControl+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A90F21B2488A00E9D2A0 /* UIPageControl+Mixed.swift */; };
+		BE01A93021B2488A00E9D2A0 /* UIPopoverPresentationController+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91021B2488A00E9D2A0 /* UIPopoverPresentationController+Mixed.swift */; };
+		BE01A93121B2488A00E9D2A0 /* UIProgressView+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91121B2488A00E9D2A0 /* UIProgressView+Mixed.swift */; };
+		BE01A93221B2488A00E9D2A0 /* UISearchBar+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91221B2488A00E9D2A0 /* UISearchBar+Mixed.swift */; };
+		BE01A93321B2488A00E9D2A0 /* UISlider+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91321B2488A00E9D2A0 /* UISlider+Mixed.swift */; };
+		BE01A93421B2488A00E9D2A0 /* UISwitch+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91421B2488A00E9D2A0 /* UISwitch+Mixed.swift */; };
+		BE01A93521B2488A00E9D2A0 /* UITabBar+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91521B2488A00E9D2A0 /* UITabBar+Mixed.swift */; };
+		BE01A93621B2488A00E9D2A0 /* UITableView+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91621B2488A00E9D2A0 /* UITableView+Mixed.swift */; };
+		BE01A93721B2488A00E9D2A0 /* UITextField+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91721B2488A00E9D2A0 /* UITextField+Mixed.swift */; };
+		BE01A93821B2488A00E9D2A0 /* UITextView+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91821B2488A00E9D2A0 /* UITextView+Mixed.swift */; };
+		BE01A93921B2488A00E9D2A0 /* UIToolbar+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91921B2488A00E9D2A0 /* UIToolbar+Mixed.swift */; };
+		BE01A93A21B2488A00E9D2A0 /* UIView+Mixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91A21B2488A00E9D2A0 /* UIView+Mixed.swift */; };
+		BE01A93B21B2488A00E9D2A0 /* UINavigationBar+MixedBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91B21B2488A00E9D2A0 /* UINavigationBar+MixedBarStyle.swift */; };
+		BE01A93C21B2488A00E9D2A0 /* UINavigationBar+MixedTitleTextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91C21B2488A00E9D2A0 /* UINavigationBar+MixedTitleTextAttributes.swift */; };
+		BE01A93D21B2488A00E9D2A0 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A91D21B2488A00E9D2A0 /* UIView+IBInspectable.swift */; };
+		BE01A93F21B24F6E00E9D2A0 /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01A93E21B24F6E00E9D2A0 /* theme.swift */; };
 		BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE113D7E21673AEB0011FE48 /* MenuTVC.swift */; };
 		BE1D430621726D1400559496 /* LogoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1D430521726D1400559496 /* LogoIcon.png */; };
 		BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA18E21669F840022CD81 /* AppDelegate.swift */; };
@@ -43,6 +76,7 @@
 		BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */; };
 		BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */; };
 		BEAE106121692B08003B01DD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAE106021692B08003B01DD /* CollectionViewCell.swift */; };
+		BEF38B1C21C4CE4B005CA6B6 /* IntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF38B1B21C4CE4B005CA6B6 /* IntroCell.swift */; };
 		BEFFFD0921698221004B21AA /* CollectionViewCellF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +85,39 @@
 		168072A09A4A161E9473C9CD /* Pods-Islam Explored.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam Explored.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored.debug.xcconfig"; sourceTree = "<group>"; };
 		2D071FAA52A88ED6F7C1B9F5 /* Pods_Islam_Explored.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Islam_Explored.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6705457F5A3F31F4ACD8666 /* Pods-Islam Explored.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Islam Explored.release.xcconfig"; path = "Pods/Target Support Files/Pods-Islam Explored/Pods-Islam Explored.release.xcconfig"; sourceTree = "<group>"; };
+		BE01A8FD21B2488A00E9D2A0 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		BE01A8FE21B2488A00E9D2A0 /* AttributeNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNames.swift; sourceTree = "<group>"; };
+		BE01A8FF21B2488A00E9D2A0 /* CALayer+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90021B2488A00E9D2A0 /* Dictionary+AttributedStringKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+AttributedStringKeys.swift"; sourceTree = "<group>"; };
+		BE01A90121B2488A00E9D2A0 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		BE01A90221B2488A00E9D2A0 /* MixedResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixedResource.swift; sourceTree = "<group>"; };
+		BE01A90321B2488A00E9D2A0 /* NightNight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightNight.swift; sourceTree = "<group>"; };
+		BE01A90421B2488A00E9D2A0 /* NNMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NNMutableAttributedString.swift; sourceTree = "<group>"; };
+		BE01A90521B2488A00E9D2A0 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		BE01A90621B2488A00E9D2A0 /* NSObject+Customize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Customize.swift"; sourceTree = "<group>"; };
+		BE01A90721B2488A00E9D2A0 /* NSObject+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90821B2488A00E9D2A0 /* UIButton+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90921B2488A00E9D2A0 /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		BE01A90A21B2488A00E9D2A0 /* UIImageView+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90C21B2488A00E9D2A0 /* UIBarButtonItem+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90D21B2488A00E9D2A0 /* UILabel+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90E21B2488A00E9D2A0 /* UINavigationBar+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A90F21B2488A00E9D2A0 /* UIPageControl+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91021B2488A00E9D2A0 /* UIPopoverPresentationController+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPopoverPresentationController+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91121B2488A00E9D2A0 /* UIProgressView+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIProgressView+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91221B2488A00E9D2A0 /* UISearchBar+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91321B2488A00E9D2A0 /* UISlider+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91421B2488A00E9D2A0 /* UISwitch+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91521B2488A00E9D2A0 /* UITabBar+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91621B2488A00E9D2A0 /* UITableView+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91721B2488A00E9D2A0 /* UITextField+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91821B2488A00E9D2A0 /* UITextView+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91921B2488A00E9D2A0 /* UIToolbar+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIToolbar+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91A21B2488A00E9D2A0 /* UIView+Mixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Mixed.swift"; sourceTree = "<group>"; };
+		BE01A91B21B2488A00E9D2A0 /* UINavigationBar+MixedBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+MixedBarStyle.swift"; sourceTree = "<group>"; };
+		BE01A91C21B2488A00E9D2A0 /* UINavigationBar+MixedTitleTextAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+MixedTitleTextAttributes.swift"; sourceTree = "<group>"; };
+		BE01A91D21B2488A00E9D2A0 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		BE01A93E21B24F6E00E9D2A0 /* theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
 		BE113D7E21673AEB0011FE48 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		BE1D430521726D1400559496 /* LogoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoIcon.png; sourceTree = "<group>"; };
 		BEAAA18B21669F840022CD81 /* Islam Explored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Islam Explored.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +157,7 @@
 		BEAAA2222166DD290022CD81 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		BEAAA2232166DD2A0022CD81 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		BEAE106021692B08003B01DD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BEF38B1B21C4CE4B005CA6B6 /* IntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCell.swift; sourceTree = "<group>"; };
 		BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +173,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE01A8FC21B2488A00E9D2A0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE01A8FD21B2488A00E9D2A0 /* .gitkeep */,
+				BE01A8FE21B2488A00E9D2A0 /* AttributeNames.swift */,
+				BE01A8FF21B2488A00E9D2A0 /* CALayer+Mixed.swift */,
+				BE01A90021B2488A00E9D2A0 /* Dictionary+AttributedStringKeys.swift */,
+				BE01A90121B2488A00E9D2A0 /* Keys.swift */,
+				BE01A90221B2488A00E9D2A0 /* MixedResource.swift */,
+				BE01A90321B2488A00E9D2A0 /* NightNight.swift */,
+				BE01A90421B2488A00E9D2A0 /* NNMutableAttributedString.swift */,
+				BE01A90521B2488A00E9D2A0 /* NotificationManager.swift */,
+				BE01A90621B2488A00E9D2A0 /* NSObject+Customize.swift */,
+				BE01A90721B2488A00E9D2A0 /* NSObject+Mixed.swift */,
+				BE01A90821B2488A00E9D2A0 /* UIButton+Mixed.swift */,
+				BE01A90921B2488A00E9D2A0 /* UIColor+RGB.swift */,
+				BE01A90A21B2488A00E9D2A0 /* UIImageView+Mixed.swift */,
+				BE01A90B21B2488A00E9D2A0 /* UIKit */,
+				BE01A91B21B2488A00E9D2A0 /* UINavigationBar+MixedBarStyle.swift */,
+				BE01A91C21B2488A00E9D2A0 /* UINavigationBar+MixedTitleTextAttributes.swift */,
+				BE01A91D21B2488A00E9D2A0 /* UIView+IBInspectable.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BE01A90B21B2488A00E9D2A0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BE01A90C21B2488A00E9D2A0 /* UIBarButtonItem+Mixed.swift */,
+				BE01A90D21B2488A00E9D2A0 /* UILabel+Mixed.swift */,
+				BE01A90E21B2488A00E9D2A0 /* UINavigationBar+Mixed.swift */,
+				BE01A90F21B2488A00E9D2A0 /* UIPageControl+Mixed.swift */,
+				BE01A91021B2488A00E9D2A0 /* UIPopoverPresentationController+Mixed.swift */,
+				BE01A91121B2488A00E9D2A0 /* UIProgressView+Mixed.swift */,
+				BE01A91221B2488A00E9D2A0 /* UISearchBar+Mixed.swift */,
+				BE01A91321B2488A00E9D2A0 /* UISlider+Mixed.swift */,
+				BE01A91421B2488A00E9D2A0 /* UISwitch+Mixed.swift */,
+				BE01A91521B2488A00E9D2A0 /* UITabBar+Mixed.swift */,
+				BE01A91621B2488A00E9D2A0 /* UITableView+Mixed.swift */,
+				BE01A91721B2488A00E9D2A0 /* UITextField+Mixed.swift */,
+				BE01A91821B2488A00E9D2A0 /* UITextView+Mixed.swift */,
+				BE01A91921B2488A00E9D2A0 /* UIToolbar+Mixed.swift */,
+				BE01A91A21B2488A00E9D2A0 /* UIView+Mixed.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		BEAAA18221669F840022CD81 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +241,7 @@
 		BEAAA18D21669F840022CD81 /* Islam */ = {
 			isa = PBXGroup;
 			children = (
+				BE01A8FC21B2488A00E9D2A0 /* Classes */,
 				BEC21A092167E58400F9334F /* Images */,
 				BEAAA21E2166D80D0022CD81 /* Deignable */,
 				BEAAA1B52166CF100022CD81 /* Font */,
@@ -167,6 +283,7 @@
 				BEAAA1AA2166CC140022CD81 /* cellPost.swift */,
 				BEAE106021692B08003B01DD /* CollectionViewCell.swift */,
 				BEFFFD0821698221004B21AA /* CollectionViewCellF.swift */,
+				BEF38B1B21C4CE4B005CA6B6 /* IntroCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -213,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				BEAAA21F2166D8350022CD81 /* DeisgnableButton.swift */,
+				BE01A93E21B24F6E00E9D2A0 /* theme.swift */,
 			);
 			path = Deignable;
 			sourceTree = "<group>";
@@ -319,6 +437,7 @@
 				BEAAA20B2166CF300022CD81 /* OpenSans-SemiBold.ttf in Resources */,
 				BEAAA2012166CF300022CD81 /* OpenSans-Italic.ttf in Resources */,
 				BEAAA21B2166CF300022CD81 /* OpenSans-LightItalic.ttf in Resources */,
+				BE01A91E21B2488A00E9D2A0 /* .gitkeep in Resources */,
 				BEAAA2182166CF300022CD81 /* OpenSans-ExtraBold.ttf in Resources */,
 				BEAAA19621669F860022CD81 /* Assets.xcassets in Resources */,
 				BEAAA2052166CF300022CD81 /* OpenSans-Regular.ttf in Resources */,
@@ -378,19 +497,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE01A93821B2488A00E9D2A0 /* UITextView+Mixed.swift in Sources */,
 				BEAAA1A32166CA680022CD81 /* HomeVC.swift in Sources */,
+				BE01A92221B2488A00E9D2A0 /* Keys.swift in Sources */,
+				BE01A92B21B2488A00E9D2A0 /* UIImageView+Mixed.swift in Sources */,
 				BEFFFD0921698221004B21AA /* CollectionViewCellF.swift in Sources */,
+				BE01A92C21B2488A00E9D2A0 /* UIBarButtonItem+Mixed.swift in Sources */,
+				BE01A93D21B2488A00E9D2A0 /* UIView+IBInspectable.swift in Sources */,
+				BE01A93F21B24F6E00E9D2A0 /* theme.swift in Sources */,
+				BE01A93121B2488A00E9D2A0 /* UIProgressView+Mixed.swift in Sources */,
+				BE01A93421B2488A00E9D2A0 /* UISwitch+Mixed.swift in Sources */,
+				BE01A92E21B2488A00E9D2A0 /* UINavigationBar+Mixed.swift in Sources */,
 				BEAAA1A82166CB310022CD81 /* PostRequest.swift in Sources */,
 				BEAAA1AF2166CC8B0022CD81 /* String+Convenience.swift in Sources */,
+				BE01A92321B2488A00E9D2A0 /* MixedResource.swift in Sources */,
+				BE01A93621B2488A00E9D2A0 /* UITableView+Mixed.swift in Sources */,
+				BE01A93221B2488A00E9D2A0 /* UISearchBar+Mixed.swift in Sources */,
+				BE01A92A21B2488A00E9D2A0 /* UIColor+RGB.swift in Sources */,
 				BEAAA18F21669F840022CD81 /* AppDelegate.swift in Sources */,
+				BE01A93C21B2488A00E9D2A0 /* UINavigationBar+MixedTitleTextAttributes.swift in Sources */,
+				BE01A93021B2488A00E9D2A0 /* UIPopoverPresentationController+Mixed.swift in Sources */,
+				BEF38B1C21C4CE4B005CA6B6 /* IntroCell.swift in Sources */,
+				BE01A92D21B2488A00E9D2A0 /* UILabel+Mixed.swift in Sources */,
+				BE01A92521B2488A00E9D2A0 /* NNMutableAttributedString.swift in Sources */,
 				BE113D7F21673AEB0011FE48 /* MenuTVC.swift in Sources */,
 				BEAAA2202166D8350022CD81 /* DeisgnableButton.swift in Sources */,
+				BE01A92421B2488A00E9D2A0 /* NightNight.swift in Sources */,
+				BE01A92021B2488A00E9D2A0 /* CALayer+Mixed.swift in Sources */,
 				BEAAA1A72166CB310022CD81 /* Post.swift in Sources */,
 				BEAAA1AB2166CC140022CD81 /* cellPost.swift in Sources */,
+				BE01A93A21B2488A00E9D2A0 /* UIView+Mixed.swift in Sources */,
+				BE01A91F21B2488A00E9D2A0 /* AttributeNames.swift in Sources */,
 				BEAE106121692B08003B01DD /* CollectionViewCell.swift in Sources */,
+				BE01A92121B2488A00E9D2A0 /* Dictionary+AttributedStringKeys.swift in Sources */,
+				BE01A92F21B2488A00E9D2A0 /* UIPageControl+Mixed.swift in Sources */,
 				BEAAA2242166DD2A0022CD81 /* SWRevealViewController.m in Sources */,
+				BE01A92621B2488A00E9D2A0 /* NotificationManager.swift in Sources */,
+				BE01A92921B2488A00E9D2A0 /* UIButton+Mixed.swift in Sources */,
+				BE01A92721B2488A00E9D2A0 /* NSObject+Customize.swift in Sources */,
+				BE01A93321B2488A00E9D2A0 /* UISlider+Mixed.swift in Sources */,
+				BE01A93B21B2488A00E9D2A0 /* UINavigationBar+MixedBarStyle.swift in Sources */,
 				BEAAA1B42166CCEA0022CD81 /* PostVC.swift in Sources */,
+				BE01A93921B2488A00E9D2A0 /* UIToolbar+Mixed.swift in Sources */,
+				BE01A92821B2488A00E9D2A0 /* NSObject+Mixed.swift in Sources */,
 				BEAAA1B22166CCC40022CD81 /* SearchVC.swift in Sources */,
+				BE01A93521B2488A00E9D2A0 /* UITabBar+Mixed.swift in Sources */,
+				BE01A93721B2488A00E9D2A0 /* UITextField+Mixed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
